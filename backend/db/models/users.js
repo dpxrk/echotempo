@@ -1,17 +1,40 @@
-"use strict";
+const { Validator } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
-  const Users = sequelize.define(
-    "Users",
+  const User = sequelize.define(
+    "User",
     {
-      id: { allowNull: false, type: DataTypes.INTEGER },
-      username: { allowNull: false, type: DataTypes.STRING },
-      email: { allowNull: false, type: DataTypes.STRING },
-      hashedPassword: { allowNull: false, type: DataTypes.STRING },
+      username: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [4, 30],
+          isNotEmail(value) {
+            if (Validator.isEmail(value)) {
+              throw new Error("Cannot be an email.");
+            }
+          },
+        },
+      },
+      email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          len: [3, 256],
+        },
+      },
+      hashedPassword: {
+        type: DataTypes.STRING.BINARY,
+        allowNull: false,
+        validate: {
+          len: [60, 60],
+        },
+      },
     },
     {}
   );
-  Users.associate = function (models) {
+  User.associate = function (models) {
     // associations can be defined here
   };
-  return Users;
+  return User;
 };
