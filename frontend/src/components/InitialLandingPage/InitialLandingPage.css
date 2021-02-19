@@ -3,10 +3,6 @@
   font-family: "Open Sans", Arial, Helvetica Neue, sans-serif;
 }
 
-.circle {
-  transform: rotate();
-}
-
 .enterButton {
   opacity: 50;
   color: white;
@@ -37,7 +33,9 @@
 
 .enterButton:hover {
   -webkit-animation: rotatecircle 4s linear;
+  cursor: pointer;
 }
+
 .outerCircle {
   background-color: transparent;
   border: 8px solid rgba(255, 255, 255, 0.9);
@@ -80,6 +78,7 @@
     -webkit-transform: rotate(-360deg);
   }
 }
+
 @-webkit-keyframes spinPulse {
   0% {
     -webkit-transform: rotate(160deg);
@@ -95,6 +94,7 @@
     opacity: 0;
   }
 }
+
 @-webkit-keyframes spinoffPulse {
   0% {
     -webkit-transform: rotate(0deg);
