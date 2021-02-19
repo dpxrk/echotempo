@@ -53,7 +53,7 @@
   position: relative;
   justify-content: center;
 
-  animation: spinoffPulse 3s infinite ease-in-out;
+  animation: spinoffPulse 2s infinite ease-in-out;
 }
 .innerCircle {
   display: flex;
@@ -73,7 +73,7 @@
   position: relative;
   justify-content: center;
 
-  animation: spinoffPulse 2s infinite ease-in-out;
+  animation: spinoffPulse 1s infinite ease-in-out;
 }
 .innerInnerCircle {
   display: flex;
@@ -93,7 +93,7 @@
   position: relative;
   justify-content: center;
 
-  animation: spinoffPulse 3s infinite ease-in-out;
+  animation: spinoffPulse 2s infinite ease-in-out;
 }
 
 @keyframes spinPulse {
