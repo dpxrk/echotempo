@@ -22,10 +22,10 @@ function App() {
           <Route>
             <InitialLandingPage exact path="/" />
           </Route>
-          <Route path="/login">
+          <Route exact path="/home/login">
             <LoginFormPage />
           </Route>
-          <Route path="/signup">
+          <Route exact path="/home/signup">
             <SignupFormPage />
           </Route>
         </Switch>
