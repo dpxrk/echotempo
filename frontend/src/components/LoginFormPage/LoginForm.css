@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -23,11 +23,4 @@ label,
 span {
   font-weight: 500;
   font-family: sans-serif;
-}
-
-/* .form {
-} */
-
-/* element.stye  {
-  transform: rotate()
 } */
