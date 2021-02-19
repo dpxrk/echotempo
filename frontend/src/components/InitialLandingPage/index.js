@@ -10,7 +10,7 @@ function InitialLandingPage() {
   };
 
   return (
-    <div class="entirePage">
+    <div>
       <form onClick={onClick} className="form">
         <div className="outerCircle" />
         <div className="innerCircle" />
