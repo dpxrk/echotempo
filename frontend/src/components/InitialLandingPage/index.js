@@ -10,13 +10,15 @@ function InitialLandingPage() {
   };
 
   return (
-    <div>
-      <form onClick={onClick} className="form">
+    <div class>
+      <form className="form">
         <div className="outerCircle" />
         <div className="innerCircle" />
         <div className="innerInnerCircle" />
         <div className>
-          <button className="enterButton">Welcome</button>
+          <button className="enterButton" onClick={onClick}>
+            Welcome
+          </button>
         </div>
       </form>
       <div className="footer">

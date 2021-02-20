@@ -45,12 +45,12 @@
   border-radius: 100px;
   width: 183px;
   height: 183px;
-  top: 473px;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
-  margin: 0 auto;
-  position: relative;
+  margin: auto;
+  position: absolute;
   justify-content: center;
 
   animation: spinoffPulse 2s infinite ease-in-out;
@@ -63,14 +63,14 @@
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
   border-radius: 100px;
-  top: 320px;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
   width: 92px;
   height: 92px;
   margin: auto;
-  position: relative;
+  position: absolute;
   justify-content: center;
 
   animation: spinoffPulse 1s infinite ease-in-out;
@@ -83,14 +83,14 @@
   border-left: 3px solid transparent;
   border-right: 3px solid transparent;
   border-radius: 100px;
-  top: 196px;
+  top: 0px;
   bottom: 0;
   left: 0;
   right: 0;
   width: 137px;
   height: 137px;
   margin: auto;
-  position: relative;
+  position: absolute;
   justify-content: center;
 
   animation: spinoffPulse 2s infinite ease-in-out;
