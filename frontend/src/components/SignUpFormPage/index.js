@@ -52,7 +52,7 @@ function SignupFormPage() {
       <div>
         <label>
           <input
-            placeholder="Artist Name"
+            placeholder="Username/Artist Name"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}

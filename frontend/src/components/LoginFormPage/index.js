@@ -47,6 +47,9 @@ function LoginFormPage() {
           ))}
         </ul>
       ) : null}
+      <div className="outerBox"></div>
+      <div className="innerBox"></div>
+      <div className="innerInnerBox"></div>
       <div className="form-title">Login Page</div>
       <div>
         <label>

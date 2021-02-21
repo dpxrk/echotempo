@@ -10,11 +10,29 @@
   margin: 0;
   text-align: center;
   animation-duration: 1s;
-  animation-name: fadein;
+  animation: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   padding-top: 10px;
 }
 
 @keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
   from {
     opacity: 0%;
   }

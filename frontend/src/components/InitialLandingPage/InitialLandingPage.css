@@ -64,6 +64,8 @@ body {
   justify-content: center;
   animation-duration: 2s;
   animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   animation: spinoffPulse 2s infinite ease-in-out;
 }
 .innerCircle {
@@ -85,6 +87,8 @@ body {
   justify-content: center;
   animation-duration: 2s;
   animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   animation: spinoffPulse 2s infinite ease-in-out;
 }
 .innerInnerCircle {
@@ -106,6 +110,8 @@ body {
   justify-content: center;
   animation-duration: 2s;
   animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   animation: spinonPulse 2s infinite ease-in-out;
 }
 
@@ -132,5 +138,39 @@ body {
   }
   to {
     opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes spinoffPulse {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spinonPulse {
+  0% {
+    -webkit-transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
   }
 }

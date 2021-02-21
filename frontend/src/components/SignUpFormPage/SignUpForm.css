@@ -8,9 +8,28 @@
   padding: 20px;
   animation-duration: 1s;
   animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
 }
 
 @keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
   from {
     opacity: 0%;
   }
@@ -58,5 +77,5 @@ input:focus {
   margin: 10px;
   font-size: 1em;
   cursor: pointer;
-  width:40%;
+  width: 40%;
 }
