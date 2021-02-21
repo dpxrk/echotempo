@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 function HomePage() {
   const sessionUser = useSelector((state) => state.session.user);
+  console.log("THIS IS THE SESSION USER:", sessionUser);
 
   if (!sessionUser) {
     return <Redirect to="/home/login" />;

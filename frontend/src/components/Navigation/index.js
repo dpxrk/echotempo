@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -23,7 +24,7 @@ function Navigation({ isLoaded }) {
   let audioPlayer = (
     <div className="bottomNavBar">
       <AudioPlayer
-        src="http://example.com/audio.mp3"
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
         showSkipControls
         showJumpControls
         showFilledProgress

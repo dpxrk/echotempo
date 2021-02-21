@@ -26,23 +26,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  if (!sessionUser) {
-    return (
-      <>
-        <Switch>
-          <Route exact path="/">
-            <InitialLandingPage />
-          </Route>
-          <Route path="/home/login">
-            <LoginFormPage />
-          </Route>
-          <Route path="/home/signup">
-            <SignupFormPage />
-          </Route>
-        </Switch>
-      </>
-    );
-  } else {
+  return sessionUser ? (
     <>
       <Navigation isLoaded={isLoaded} />
       <Switch>
@@ -50,8 +34,22 @@ function App() {
           <HomePage />
         </Route>
       </Switch>
-    </>;
-  }
+    </>
+  ) : (
+    <>
+      <Switch>
+        <Route exact path="/">
+          <InitialLandingPage />
+        </Route>
+        <Route path="/home/login">
+          <LoginFormPage />
+        </Route>
+        <Route path="/home/signup">
+          <SignupFormPage />
+        </Route>
+      </Switch>
+    </>
+  );
 }
 
 export default App;

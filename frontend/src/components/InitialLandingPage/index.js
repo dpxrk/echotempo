@@ -10,7 +10,7 @@ function InitialLandingPage({}) {
   };
 
   return (
-    <div className="container">
+    <div className="InitialLandingPage">
       <form className="form">
         <div className="outerCircle" />
         <div className="innerCircle" />

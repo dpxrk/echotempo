@@ -1,27 +1,17 @@
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-span {
-  font-weight: 500;
-  font-family: sans-serif;
-}
-
 .form-container {
-  /* background-color: #00A2FF ; */
-  color: white;
-  height: 40%;
-  width: 40%;
-  margin: auto;
-  margin-top: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  background: black;
+  color: black;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   text-align: center;
-  /* border-radius: 20px; */
-  padding: 20px;
   animation-duration: 1s;
   animation-name: fadein;
+  padding-top: 10px;
 }
 
 @keyframes fadein {
@@ -37,22 +27,14 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
-}
-
-.form-desc {
-  color: white;
-  font-family: Montserrat;
-  font-weight: 500;
-  font-size: 1.1em;
 }
 
 input {
+  font-family: Montserrat;
   padding: 10px;
   border-radius: 18px;
   border: none;
   font-weight: 400;
-  width: 40%;
   text-align: center;
   margin: 10px;
 }
@@ -64,40 +46,14 @@ input:focus {
 .form-title {
   font-family: Montserrat;
   font-weight: 500;
-  font-size: 2.5em;
+  font-size: 2.75em;
   color: white;
-  padding: 10px;
-  margin-bottom: 10px;
 }
 
 .login-button {
   font-family: Montserrat;
-  font-weight: 500;
   height: 2em;
   padding: 0 20px;
-  margin: 0 10px;
-  border-radius: 15px;
-  background-color: transparent;
-  border: white solid 1px;
-  color: white;
-  margin: 15px;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.below-text {
-  color: white;
-  padding: 10px;
-  font-size: 6px;
-  width: 260px;
-  margin: auto;
-}
-
-.cancel-button {
-  font-weight: 500;
-  height: 2em;
-  padding: 0 20px;
-  margin: 0 10px;
   border-radius: 15px;
   background-color: transparent;
   border: white solid 1px;
@@ -105,4 +61,20 @@ input:focus {
   margin: 10px;
   font-size: 1em;
   cursor: pointer;
+  width: 180px;
+}
+
+.cancel-button {
+  font-family: Montserrat;
+  font-weight: 500;
+  height: 2em;
+  padding: 0 20px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: white solid 1px;
+  color: white;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 180px;
 }

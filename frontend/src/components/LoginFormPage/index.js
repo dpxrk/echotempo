@@ -3,6 +3,7 @@ import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "./LoginForm.css";
+import { useHistory } from "react-router-dom";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ function LoginFormPage() {
   const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const history = useHistory();
 
   if (sessionUser) return <Redirect to="/home" />;
 
@@ -31,16 +33,23 @@ function LoginFormPage() {
     );
   };
 
+  const handleNotRegisteredSubmit = (e) => {
+    e.preventDefault();
+    history.push("/home/signup");
+  };
+
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <div>Login Page</div>
+      {errors.length ? (
+        <ul className="errors">
+          {errors.map((error, idx) => (
+            <li key={idx}>{error}</li>
+          ))}
+        </ul>
+      ) : null}
+      <div className="form-title">Login Page</div>
       <div>
-        <label className="username-box">
+        <label>
           <input
             placeholder="Username"
             className="username-entry-box"
@@ -73,7 +82,16 @@ function LoginFormPage() {
           className="cancel-button"
           onClick={handleDemoSubmit}
         >
-          Demo User?
+          Demo User Login
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          className="cancel-button"
+          onClick={handleNotRegisteredSubmit}
+        >
+          Not Registered?
         </button>
       </div>
     </form>
