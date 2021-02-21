@@ -28,6 +28,8 @@ body {
   border: none;
   animation-duration: 5s;
   animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
 }
 
 .footer {
