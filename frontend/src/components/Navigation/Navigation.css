@@ -1,15 +1,30 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+.nav-links {
+  display: flex;
+  padding: 10px;
+  justify-content: right;
 }
 
-navigation {
-  z-index: 100;
-  opacity: 0;
+.navbar {
+  background-color: #333;
+  display: flex;
+  overflow: hidden;
   position: fixed;
-  top: 6.66667rem;
-  right: 0;
-  left: 0;
-  height: 13.33333rem;
+  top: 0;
+  width: 100%;
+  justify-content: flex-end;
+  justify-items: space-evenly;
+}
+
+.bottomNavBar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.rhap_container {
+  display: flex;
+  justify-content: space-evenly;
+  background: red;
 }

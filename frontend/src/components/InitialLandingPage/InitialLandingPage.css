@@ -1,10 +1,11 @@
-* {
-  background: #000000;
+body {
+  background: black;
   font-family: "Open Sans", Arial, Helvetica Neue, sans-serif;
 }
 
 .enterButton {
   opacity: 50;
+  background: black;
   color: white;
   display: flex;
   position: absolute;
@@ -23,7 +24,7 @@
 .footer {
   display: flex;
   position: absolute;
-  bottom: 5%;
+  bottom: 8%;
   color: white;
   justify-content: space-evenly;
   align-items: center;

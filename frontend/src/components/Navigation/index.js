@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
+import AudioPlayer from "react-h5-audio-player";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -13,27 +14,33 @@ function Navigation({ isLoaded }) {
   } else {
     sessionLinks = (
       <>
-        <div className="nav-links">
-          <div>
-            <NavLink to="/home/login">Log In</NavLink>
-          </div>
-          <div>
-            <NavLink to="/home/signup">Sign Up</NavLink>
-          </div>
-        </div>
+        <NavLink to="/home/login">Log In</NavLink>
+        <NavLink to="/home/signup">Sign Up</NavLink>
       </>
     );
   }
 
+  let audioPlayer = (
+    <div className="bottomNavBar">
+      <AudioPlayer
+        src="http://example.com/audio.mp3"
+        showSkipControls
+        showJumpControls
+        showFilledProgress
+        autoPlayAfterSrcChange
+        volummeJumpStep
+        progressJumpSteps
+        defaultCurrentTime
+        defaultDuration
+      />
+    </div>
+  );
+
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/home" className="nav-links">
-          Home
-        </NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
+    <>
+      <div className="navbar">{isLoaded && sessionLinks}</div>
+      <div>{audioPlayer}</div>;
+    </>
   );
 }
 

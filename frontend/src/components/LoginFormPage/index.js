@@ -11,7 +11,7 @@ function LoginFormPage() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/home" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,17 +24,26 @@ function LoginFormPage() {
     );
   };
 
+  const handleDemoSubmit = (e) => {
+    e.preventDefault();
+    return dispatch(
+      sessionActions.login({ credential: "Demo-User", password: "password" })
+    );
+  };
+
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-container" onSubmit={handleSubmit}>
       <ul>
         {errors.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
       </ul>
-      <div className="form">
-        <label>
-          Username:
+      <div>Login Page</div>
+      <div>
+        <label className="username-box">
           <input
+            placeholder="Username"
+            className="username-entry-box"
             type="text"
             value={credential}
             onChange={(e) => setCredential(e.target.value)}
@@ -42,10 +51,10 @@ function LoginFormPage() {
           />
         </label>
       </div>
-      <div className="form">
+      <div>
         <label>
-          Password::
           <input
+            placeholder="Password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -53,8 +62,19 @@ function LoginFormPage() {
           />
         </label>
       </div>
-      <div className="form">
-        <button type="submit">Log In</button>
+      <div>
+        <button className="login-button" type="submit">
+          Log In
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          className="cancel-button"
+          onClick={handleDemoSubmit}
+        >
+          Demo User?
+        </button>
       </div>
     </form>
   );
