@@ -11,14 +11,7 @@ function HomePage() {
 
   return (
     <div className="HomePage">
-      <div className="page-container">
-        <h1></h1>
-        <div>
-          <h2>EchoTempo</h2>
-          <div></div>
-        </div>
-        <div></div>
-      </div>
+      <div className="grid-container"></div>
     </div>
   );
 }

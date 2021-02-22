@@ -3,7 +3,9 @@ body {
   padding: 0;
 }
 .InitialLandingPage {
-  background: black;
+  background: #757f9a;
+  background: -webkit-linear-gradient(to bottom, #d7dde8, #757f9a);
+  background: linear-gradient(to bottom, #d7dde8, #757f9a);
   font-family: Montserrat;
   width: 100vw;
   height: 100vh;
@@ -12,7 +14,7 @@ body {
 .enterButton {
   font-family: Montserrat;
   opacity: 50;
-  background: black;
+  background: transparent;
   color: white;
   display: flex;
   position: absolute;
@@ -50,7 +52,7 @@ body {
 .outerCircle {
   display: flex;
   background-color: transparent;
-  border: 8px solid rgba(255, 0, 0, 0.9);
+  border: 8px solid #d7dde8;
   opacity: 0.9;
   border-right: 1px solid transparent;
   border-left: 1px solid transparent;
@@ -66,14 +68,14 @@ body {
   justify-content: center;
   animation-duration: 2s;
   animation-name: fadein;
-  /* -webkit-animation-name: fadein;
-  -moz-animation-name: fadein; */
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   animation: spinoffPulse 2s infinite ease-in-out;
 }
 .innerCircle {
   display: flex;
   background-color: transparent;
-  border: 5px solid rgba(248, 33, 33, 0.876);
+  border: 5px solid #d7dde8;
   opacity: 0.9;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;
@@ -89,14 +91,14 @@ body {
   justify-content: center;
   animation-duration: 2s;
   animation-name: fadein;
-  /* -webkit-animation-name: fadein;
-  -moz-animation-name: fadein; */
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
   animation: spinoffPulse 2s infinite ease-in-out;
 }
 .innerInnerCircle {
   display: flex;
   background-color: transparent;
-  border: 5px solid rgba(1, 18, 255, 0.876);
+  border: 5px solid rgba(38, 53, 253, 0.876);
   opacity: 0.9;
   border-left: 1px solid transparent;
   border-right: 1px solid transparent;

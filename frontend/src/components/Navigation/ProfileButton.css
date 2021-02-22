@@ -1,11 +1,13 @@
-.profile-button {
+.profile-button-dropdown {
   border: none;
-  background: white;
+  background: #666d83;
   cursor: pointer;
+  float: right;
 }
 
-ul {
-  list-style-type: none;
+.profile-bar {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .profile-list-item {
@@ -14,12 +16,15 @@ ul {
 
 .profile-button:hover,
 .profile-button:hover:focus {
-  color: red;
-}
-
-/* .profile-button li {
-  font-size: 10px;
+  color: #757f9a;
 }
 
 .logout-button {
-} */
+  border: none;
+}
+.settings-button {
+  display: flex;
+  justify-content: flex-end;
+  border: none;
+  cursor: pointer;
+}

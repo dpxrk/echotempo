@@ -1,7 +1,7 @@
 .signUpForm {
-  background: #232526;
-  background: -webkit-linear-gradient(to right, #414345, #232526);
-  background: linear-gradient(to right, #414345, #232526);
+  background: #757f9a;
+  background: -webkit-linear-gradient(to top, #d7dde8, #757f9a);
+  background: linear-gradient(to top, #d7dde8, #757f9a);
   display: flex;
   justify-content: center;
   align-items: stretch;
@@ -65,6 +65,7 @@ input:focus {
   margin-bottom: 10px;
 }
 .signup-button {
+  font-family: Montserrat;
   font-weight: 500;
   height: 2em;
   padding: 0 20px;
@@ -79,14 +80,44 @@ input:focus {
   width: 300px;
 }
 
+.signup-button:hover,
+.signup-button:focus {
+  color: #757f9a;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+
+.already-registered-button {
+  font-family: Montserrat;
+  font-weight: 500;
+  height: 2em;
+  padding: 0 20px;
+  margin: 0 10px;
+  border-radius: 18px;
+  background-color: transparent;
+  border: white solid 1px;
+  color: white;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 300px;
+}
+
+.already-registered-button:hover,
+.already-registered-button:focus {
+  color: #757f9a;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+
 .errors {
   display: flex;
-  color: red;
+  color: black;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   font-family: Montserrat;
   font-size: 14px;
   font-weight: 100;
   margin: auto;
-  left: 5px;
+  left: 0px;
 }

@@ -3,9 +3,48 @@ h2 {
 }
 
 .HomePage {
-  background: #232526;
-  background: -webkit-linear-gradient(to top, #414345, #232526);
-  background: linear-gradient(to top, #414345, #232526);
+  font-family: Montserrat;
+  background: #757f9a;
+  background: -webkit-linear-gradient(to top, #d7dde8, #757f9a);
+  background: linear-gradient(to top, #d7dde8, #757f9a);
   width: 100vw;
   height: 100vh;
+  animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  z-index: 1;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 500px;
+  row-gap: 8px;
+  column-gap: 8px;
+  /* grid-tempate-areas: */
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }

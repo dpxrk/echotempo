@@ -5,20 +5,15 @@ import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import { Link } from "react-router-dom";
+import ReactPlayer from "react-player";
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
 
-  let sessionLinks;
+  let profileButton;
   if (sessionUser) {
-    sessionLinks = <ProfileButton user={sessionUser} />;
-  } else {
-    sessionLinks = (
-      <>
-        <NavLink to="/home/login">Log In</NavLink>
-        <NavLink to="/home/signup">Sign Up</NavLink>
-      </>
-    );
+    profileButton = <ProfileButton user={sessionUser} />;
   }
 
   let audioPlayer = (
@@ -38,12 +33,22 @@ function Navigation({ isLoaded }) {
   );
 
   return (
-    <>
+    <div>
       <nav>
-        <div>{isLoaded && sessionLinks}</div>
+        <div>{isLoaded}</div>
+        <ul className="nav-links">
+          <li>
+            <Link className="homeLink" to="/home">
+              EchoTempo
+            </Link>
+          </li>
+          <li>
+            <a className="settings-button">{profileButton}</a>
+          </li>
+        </ul>
       </nav>
-      <div>{audioPlayer}</div>
-    </>
+      <div className="audio-player">{audioPlayer}</div>
+    </div>
   );
 }
 

@@ -27,6 +27,11 @@ function ProfileButton({ user }) {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
+  const onClick = () => {
+
+
+  };
+
   const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logOut());
@@ -34,21 +39,23 @@ function ProfileButton({ user }) {
   };
 
   return (
-    <>
-      <button className="profile-button" onClick={openMenu}>
+    <div className="profile-bar">
+      <button className="profile-button-dropdown" onClick={onClick}>
+        <i class="far fa-user-circle" />
         {user.username}
       </button>
-      {showMenu && (
-        <ul>
-          <li className="profile-list-item">User email: {user.email}</li>
-          <li>
+      <button className="settings-button" onClick={openMenu}>
+        <i class="fas fa-ellipsis-h"></i>
+        {showMenu && (
+          <div>
+            <div className="profile-list-item">User email: {user.email}</div>
             <button className="logout-button" onClick={logout}>
               Log Out
             </button>
-          </li>
-        </ul>
-      )}
-    </>
+          </div>
+        )}
+      </button>
+    </div>
   );
 }
 
