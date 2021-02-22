@@ -61,10 +61,8 @@ const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case SET_USER:
-      console.log("ANYTHING");
       newState = Object.assign({}, state);
       newState.user = action.user;
-      console.log("THIS IS THE NEWSTATE:", newState);
       return newState;
     case REMOVE_SET_USER:
       newState = Object.assign({}, state);

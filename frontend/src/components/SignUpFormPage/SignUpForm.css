@@ -1,15 +1,20 @@
-.form-container {
-  color: white;
-  height: 40%;
-  width: 40%;
-  margin: auto;
-  margin-top: 15%;
+.signUpForm {
+  background: #232526;
+  background: -webkit-linear-gradient(to right, #414345, #232526);
+  background: linear-gradient(to right, #414345, #232526);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
   text-align: center;
-  padding: 20px;
   animation-duration: 1s;
   animation-name: fadein;
   -webkit-animation-name: fadein;
   -moz-animation-name: fadein;
+  padding-top: 10px;
 }
 
 @keyframes fadein {
@@ -38,18 +43,12 @@
   }
 }
 
-.form-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 input {
   padding: 10px;
   border-radius: 18px;
   border: none;
   font-weight: 400;
-  width: 70%;
+  width: 250px;
   text-align: center;
   margin: 10px;
 }
@@ -65,17 +64,29 @@ input:focus {
   padding: 10px;
   margin-bottom: 10px;
 }
-.cancel-button {
+.signup-button {
   font-weight: 500;
   height: 2em;
   padding: 0 20px;
   margin: 0 10px;
-  border-radius: 15px;
+  border-radius: 18px;
   background-color: transparent;
   border: white solid 1px;
   color: white;
   margin: 10px;
   font-size: 1em;
   cursor: pointer;
-  width: 40%;
+  width: 300px;
+}
+
+.errors {
+  display: flex;
+  color: red;
+  justify-content: center;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 100;
+  margin: auto;
+  left: 5px;
 }

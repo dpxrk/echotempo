@@ -1,3 +1,11 @@
 h2 {
   color: white;
 }
+
+.HomePage {
+  background: #232526;
+  background: -webkit-linear-gradient(to top, #414345, #232526);
+  background: linear-gradient(to top, #414345, #232526);
+  width: 100vw;
+  height: 100vh;
+}

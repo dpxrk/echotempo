@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import "./SignUpForm.css";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -31,63 +32,69 @@ function SignupFormPage() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
-        ))}
-      </ul>
-      <div className="form-title">Registration Page</div>
-      <div>
-        <label>
-          <input
-            placeholder="Email"
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            placeholder="Username/Artist Name"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            placeholder="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          <input
-            placeholder="Confirm Password"
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </label>
-      </div>
-      <div>
-        <button className="cancel-button" type="submit">
-          Sign Up
-        </button>
-      </div>
-    </form>
+    <div className="signUpForm">
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="form-title">Registration Page</div>
+        <div>
+          <label>
+            <input
+              placeholder="Email"
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              placeholder="Username/Artist Name"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              placeholder="Password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              placeholder="Confirm Password"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </label>
+        </div>
+        <div>
+          <button className="signup-button" type="submit">
+            Sign Up
+          </button>
+        </div>
+        {errors.length ? (
+          <ul>
+            {errors.map((error, idx) => (
+              <li className="errors" key={idx}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </form>
+    </div>
   );
 }
 

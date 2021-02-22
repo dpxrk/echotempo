@@ -1,4 +1,4 @@
-.nav-links {
+/* .nav-links {
   display: flex;
   padding: 10px;
   justify-content: right;
@@ -13,7 +13,7 @@
   width: 100%;
   justify-content: flex-end;
   justify-items: space-evenly;
-}
+} */
 
 .bottomNavBar {
   overflow: hidden;
@@ -21,10 +21,4 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-}
-
-.rhap_container {
-  display: flex;
-  justify-content: space-evenly;
-  background: red;
 }

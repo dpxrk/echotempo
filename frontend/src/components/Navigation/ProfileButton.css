@@ -1,0 +1,25 @@
+.profile-button {
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.profile-list-item {
+  font-size: 10px;
+}
+
+.profile-button:hover,
+.profile-button:hover:focus {
+  color: red;
+}
+
+/* .profile-button li {
+  font-size: 10px;
+}
+
+.logout-button {
+} */

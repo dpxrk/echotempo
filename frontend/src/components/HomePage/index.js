@@ -4,14 +4,13 @@ import { useSelector } from "react-redux";
 
 function HomePage() {
   const sessionUser = useSelector((state) => state.session.user);
-  console.log("THIS IS THE SESSION USER:", sessionUser);
 
   if (!sessionUser) {
     return <Redirect to="/home/login" />;
   }
 
   return (
-    <>
+    <div className="HomePage">
       <div className="page-container">
         <h1></h1>
         <div>
@@ -20,7 +19,7 @@ function HomePage() {
         </div>
         <div></div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -39,8 +39,10 @@ function Navigation({ isLoaded }) {
 
   return (
     <>
-      <div className="navbar">{isLoaded && sessionLinks}</div>
-      <div>{audioPlayer}</div>;
+      <nav>
+        <div>{isLoaded && sessionLinks}</div>
+      </nav>
+      <div>{audioPlayer}</div>
     </>
   );
 }
