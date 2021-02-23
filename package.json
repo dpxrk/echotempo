@@ -16,8 +16,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "moment": "^2.29.1",
+    "react-moment": "^1.1.1",
     "react-native-scrubber": "^1.1.5",
     "react-player": "^2.9.0",
-    "soundcloud": "^3.3.2"
+    "react-spotify-api": "^3.0.0",
+    "soundcloud": "^3.3.2",
+    "use-spotify-web-playback-sdk": "^0.2.2"
   }
 }

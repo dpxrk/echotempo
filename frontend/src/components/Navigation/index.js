@@ -3,34 +3,17 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
-import AudioPlayer from "react-h5-audio-player";
-import "react-h5-audio-player/lib/styles.css";
 import { Link } from "react-router-dom";
-import ReactPlayer from "react-player";
+
 
 function Navigation({ isLoaded }) {
+  // const audioObj = new Audio(url);
   const sessionUser = useSelector((state) => state.session.user);
 
   let profileButton;
   if (sessionUser) {
     profileButton = <ProfileButton user={sessionUser} />;
   }
-
-  let audioPlayer = (
-    <div className="bottomNavBar">
-      <AudioPlayer
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-        showSkipControls
-        showJumpControls
-        showFilledProgress
-        autoPlayAfterSrcChange
-        volummeJumpStep
-        progressJumpSteps
-        defaultCurrentTime
-        defaultDuration
-      />
-    </div>
-  );
 
   return (
     <div>
@@ -47,7 +30,6 @@ function Navigation({ isLoaded }) {
           </li>
         </ul>
       </nav>
-      <div className="audio-player">{audioPlayer}</div>
     </div>
   );
 }

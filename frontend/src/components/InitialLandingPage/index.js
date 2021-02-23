@@ -22,7 +22,7 @@ function InitialLandingPage({}) {
         </div>
       </form>
       <div className="footer">
-        By pressing welcome, you are agreeing to our terms and services
+        <i class="fab fa-spotify"> Powered by Spotify </i>
       </div>
     </div>
   );

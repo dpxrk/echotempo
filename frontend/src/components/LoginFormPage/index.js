@@ -99,6 +99,9 @@ function LoginFormPage() {
           </button>
         </div>
       </form>
+      <div className="footer">
+        <i class="fab fa-spotify"> Powered by Spotify </i>
+      </div>
     </div>
   );
 }
