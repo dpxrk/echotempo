@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import InitialLandingPage from "./components/InitialLandingPage";
 import HomePage from "./components/HomePage";
 import { useSelector } from "react-redux";
+// import theSongPlayerItself from "../src/components/songPlayerFunctions/theSongPlayerItself";
 
 // const findPath = () => {
 //   const location = useLocation();
@@ -29,6 +30,7 @@ function App() {
   return sessionUser ? (
     <>
       <Navigation isLoaded={isLoaded} />
+      {/* <theSongPlayerItself /> */}
       <Switch>
         <Route path="/home">
           <HomePage />

@@ -5,7 +5,6 @@ import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 
-
 function Navigation({ isLoaded }) {
   // const audioObj = new Audio(url);
   const sessionUser = useSelector((state) => state.session.user);
@@ -30,6 +29,16 @@ function Navigation({ isLoaded }) {
           </li>
         </ul>
       </nav>
+      <div>
+        <audio
+          className="bottomNavBar"
+          controls
+          currentTime
+          onDurationChange
+          loop
+          src="../../../../../songs/2019-06-07_-_Chill_Gaming_-_David_Fesliyan.mp3"
+        ></audio>
+      </div>
     </div>
   );
 }

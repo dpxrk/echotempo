@@ -27,3 +27,5 @@ yarn-error.log*
 #songPlayerFunctions because found a built in react audio player
 # but still want to keep those code in case I want to get back to it later.
 /src/components/songPlayerFunctions
+
+/src/apiUrl.js

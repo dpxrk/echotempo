@@ -125,9 +125,6 @@ function SignupFormPage() {
           </ul>
         ) : null}
       </form>
-      <div className="footer">
-        <i class="fab fa-spotify"> Powered by Spotify </i>
-      </div>
     </div>
   );
 }
