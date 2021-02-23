@@ -9,11 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       userId: {
-        allowNull: false,
+        allowNull:false,
         type: Sequelize.STRING,
       },
       songId: {
-        allowNull: false,
+        allowNull:false,
         type: Sequelize.INTEGER,
         references: { model: "Songs" },
       },

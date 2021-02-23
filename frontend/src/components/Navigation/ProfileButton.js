@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Redirect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as sessionActions from "../../store/session";
 import "./ProfileButton.css";
@@ -28,8 +28,7 @@ function ProfileButton({ user }) {
   }, [showMenu]);
 
   const onClick = () => {
-
-
+    <Redirect to="/home/profile" />;
   };
 
   const logout = (e) => {

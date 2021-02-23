@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Like = sequelize.define(
     "Like",
     {
-      userId: { allowNull: false, type: DataTypes.INTEGER },
-      songId: { allowNull: false, type: DataTypes.INTEGER },
+      userId: { allowNull:false, type: DataTypes.INTEGER },
+      songId: { allowNull:false, type: DataTypes.INTEGER },
     },
     {}
   );

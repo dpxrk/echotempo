@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
       username: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
         validate: {
           len: [3, 30],
           isNotEmail(value) {
@@ -31,6 +32,9 @@ module.exports = (sequelize, DataTypes) => {
         validate: {
           len: [60, 60],
         },
+      },
+      profileImage: {
+        type: DataTypes.STRING,
       },
     },
     {
@@ -87,8 +91,7 @@ module.exports = (sequelize, DataTypes) => {
   };
 
   User.associate = function (models) {
-    User.hasMany(models.Song, { foreignKey: "userId" });
-    User.hasMany(models.Like, { foreignKey: "userId" });
+    User.belongsToMany(models.Song, { through: "Like", foreignKey: "userId" });
     User.hasMany(models.Comment, { foreignKey: "userId" });
     User.hasMany(models.Playlist, { foriengKey: "userId" });
   };

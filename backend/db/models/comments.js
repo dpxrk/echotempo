@@ -3,8 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Comment = sequelize.define(
     "Comment",
     {
-      userId: { allowNull: false, type: DataTypes.STRING },
-      songId: { allowNull: false, type: DataTypes.INTEGER },
+      userId: { allowNull:false, type: DataTypes.STRING },
+      songId: { allowNull:false,  type: DataTypes.INTEGER },
       content: { allowNull: false, type: DataTypes.STRING },
     },
     {}

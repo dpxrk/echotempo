@@ -8,6 +8,8 @@ import * as sessionActions from "./store/session";
 import InitialLandingPage from "./components/InitialLandingPage";
 import HomePage from "./components/HomePage";
 import { useSelector } from "react-redux";
+
+import ProfilePage from './components/ProfilePage'
 // import theSongPlayerItself from "../src/components/songPlayerFunctions/theSongPlayerItself";
 
 // const findPath = () => {
@@ -34,6 +36,9 @@ function App() {
       <Switch>
         <Route path="/home">
           <HomePage />
+        </Route>
+        <Route path='/home/profile'>
+          <ProfilePage />
         </Route>
       </Switch>
     </>

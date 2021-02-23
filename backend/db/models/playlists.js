@@ -1,4 +1,7 @@
 "use strict";
+
+const playlist_songs = require("./playlist_songs");
+
 module.exports = (sequelize, DataTypes) => {
   const Playlist = sequelize.define(
     "Playlist",
@@ -11,7 +14,10 @@ module.exports = (sequelize, DataTypes) => {
   );
   Playlist.associate = function (models) {
     Playlist.belongsTo(models.User, { foriegnKey: "userId" });
-    Playlist.hasMany(models.Song, { foreignKey: "songId" });
+    Playlist.belongsToMany(models.Song, {
+      through: "Playlist_Song",
+      foreignKey: "playlistId",
+    });
   };
   return Playlist;
 };

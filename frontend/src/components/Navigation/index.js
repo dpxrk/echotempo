@@ -4,10 +4,16 @@ import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function Navigation({ isLoaded }) {
   // const audioObj = new Audio(url);
   const sessionUser = useSelector((state) => state.session.user);
+  const [song, playingSong] = useState("");
+
+  useEffect(() => {
+    
+  })
 
   let profileButton;
   if (sessionUser) {
@@ -29,15 +35,21 @@ function Navigation({ isLoaded }) {
           </li>
         </ul>
       </nav>
-      <div>
+      <div className="audioContainer">
         <audio
-          className="bottomNavBar"
+          className="bottomAudioBar"
+          title="THIS IS THE SONG PLAYING"
           controls
           currentTime
+          loop="loop"
           onDurationChange
-          loop
-          src="../../../../../songs/2019-06-07_-_Chill_Gaming_-_David_Fesliyan.mp3"
-        ></audio>
+          src="/songs/2019-06-07_-_Chill_Gaming_-_David_Fesliyan.mp3"
+        >
+          <p>
+            If you are reading this, it is because your browser does not support
+            the audio element.
+          </p>
+        </audio>
       </div>
     </div>
   );

@@ -1,3 +1,7 @@
+* {
+  overflow-x: hidden;
+}
+
 .nav-links {
   display: flex;
   padding: 10px;
@@ -14,7 +18,7 @@
   align-items: center;
 }
 
-.bottomNavBar {
+.bottomAudioBar {
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -30,7 +34,7 @@
   color: black;
   text-decoration: none;
   font-style: italic;
-  font-size: 20px;
+  font-size: 30px;
   align-items: right;
 }
 
@@ -41,11 +45,7 @@
 
 .settings-button {
   background: transparent;
-}
-
-.audio-player {
-  height: 5%;
-  width: 100vw;
+  font-size: 30px;
 }
 
 li {
@@ -66,6 +66,7 @@ nav {
 }
 
 .nav-links {
+  width: 100%;
   padding: 0;
   justify-content: space-around;
 }
