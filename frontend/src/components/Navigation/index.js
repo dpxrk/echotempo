@@ -1,17 +1,23 @@
 import React from "react";
 import { NavLink, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { getSongs } from "../../store/song";
 
 function Navigation({ isLoaded }) {
   // const audioObj = new Audio(url);
   const sessionUser = useSelector((state) => state.session.user);
-  const [song, playingSong] = useState("");
+  const songs = useSelector((state) => {
+    return state.songs.songList;
+  });
 
-  useEffect(() => {});
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getSongs());
+  }, [dispatch]);
 
   let profileButton;
   if (sessionUser) {
@@ -29,6 +35,11 @@ function Navigation({ isLoaded }) {
           <li>
             <Link className="homeLink" to="/home">
               EchoTempo
+            </Link>
+          </li>
+          <li>
+            <Link className="upload" to="/home/addnewsong">
+              Upload
             </Link>
           </li>
           <li>

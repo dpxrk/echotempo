@@ -27,7 +27,7 @@ router.get(
       },
     });
     setTokenCookie(res, user);
-    console.log("THIS IS USER ON INDEX API", user);
+
     return res.json({ user });
   })
 );

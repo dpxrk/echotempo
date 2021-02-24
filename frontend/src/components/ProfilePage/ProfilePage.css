@@ -1,0 +1,42 @@
+.ProfilePage {
+  background: #757f9a;
+  background: -webkit-linear-gradient(to top, #d7dde8, #757f9a);
+  background: linear-gradient(to top, #d7dde8, #757f9a);
+  width: 100vw;
+  height: 100vh;
+  animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  z-index: 1;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.ProfileLinks {
+  box-sizing: border-box;
+  display: flex;
+  color: white;
+}

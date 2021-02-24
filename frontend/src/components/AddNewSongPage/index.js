@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { newSong } from "../../store/song";
 import { useHistory } from "react-router-dom";
+import "./AddNewSongPage.css";
 
 function AddNewSongPage() {
   const [songTitle, setSongTitle] = useState("");
@@ -25,7 +26,7 @@ function AddNewSongPage() {
 
   const handleCancelClick = (e) => {
     e.preventDefault();
-    history.back();
+    history.push("/home");
   };
   return (
     <section className="addNewSongForm">
@@ -44,8 +45,14 @@ function AddNewSongPage() {
           value={audioFile}
           onChange={(e) => setAudioFile(e.target.value)}
         />
-        <button type="submit">Publish new Song</button>
-        <button type="button" onClick={handleCancelClick}>
+        <button type="submit" className="publish">
+          Publish new Song
+        </button>
+        <button
+          type="button"
+          className="cancel-button"
+          onClick={handleCancelClick}
+        >
           Cancel
         </button>
       </form>

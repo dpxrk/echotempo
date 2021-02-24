@@ -8,6 +8,15 @@
   width: 100%;
 }
 
+.upload,
+.upload:hover,
+.upload:focus {
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
 .homeLink,
 .homeLink:hover,
 .homeLink:focus {

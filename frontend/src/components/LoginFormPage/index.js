@@ -31,6 +31,7 @@ function LoginFormPage() {
     return dispatch(
       sessionActions.login({ credential: "Demo-lition", password: "password" })
     );
+
   };
 
   const handleNotRegisteredSubmit = (e) => {

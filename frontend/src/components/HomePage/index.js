@@ -20,19 +20,55 @@ function HomePage({ user }) {
     return <Redirect to="/home/login" />;
   }
 
+  const onClickToPlayNewSong = (url) => {
+    new Audio(url).play();
+  };
+
   return (
     <div className="HomePage">
       <div className="grid-container">
         <div className="more-of-what-you-like">
           <h2>More of what you like</h2>
-          {console.log("THIS IS SONGS2", songs)}
-          {songs && songs.map((song) => <div>{song.title}</div>)}
+
+          {songs &&
+            songs.map((song) => (
+              <div>
+                <i
+                  class="fas fa-play"
+                  onClick={onClickToPlayNewSong(song.audioFile)}
+                >
+                  {song.title}
+                </i>
+              </div>
+            ))}
         </div>
         <div className="EchoTempo-Weekly">
           <h2>EchoTempo Weekly</h2>
+          {songs &&
+            songs.map((song) => (
+              <div>
+                <i
+                  class="fas fa-play"
+                  onClick={onClickToPlayNewSong(song.audioFile)}
+                >
+                  {song.title}
+                </i>
+              </div>
+            ))}
         </div>
         <div className="recommended">
           <h2 className="recommended-title">Recommended</h2>
+          {songs &&
+            songs.map((song) => (
+              <div>
+                <i
+                  class="fas fa-play"
+                  onClick={onClickToPlayNewSong(song.audioFile)}
+                >
+                  {song.title}
+                </i>
+              </div>
+            ))}
         </div>
       </div>
     </div>

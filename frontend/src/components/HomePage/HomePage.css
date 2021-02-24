@@ -8,10 +8,36 @@ h2 {
   background: linear-gradient(to top, #d7dde8, #757f9a);
   width: 100vw;
   height: 100vh;
+  animation-duration: 1s;
   animation-name: fadein;
   -webkit-animation-name: fadein;
   -moz-animation-name: fadein;
   z-index: 1;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
 }
 
 .grid-container {
@@ -33,7 +59,7 @@ h2 {
 .EchoTempo-Weekly {
   margin: 0 auto;
   padding: 0;
-
+  text-align: center;
   grid-area: echotempoweekly;
   overflow: hidden;
   position: relative;
@@ -42,6 +68,7 @@ h2 {
 
 .recommended {
   grid-area: recommended;
+  text-align: center;
 }
 .recommended-title {
   text-align: center;
@@ -70,4 +97,8 @@ h2 {
   to {
     opacity: 100%;
   }
+}
+
+li {
+  cursor: pointer;
 }

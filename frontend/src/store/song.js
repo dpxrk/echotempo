@@ -20,12 +20,10 @@ const removeSong = (songList, songId) => ({
 
 //action to get all songs.
 export const getSongs = () => async (dispatch) => {
-  console.log("WE ARE HERE");
-
   const response = await fetch(`/api/songs`);
   if (response.ok) {
     const songs = await response.json();
-    console.log("THIS IS SONGS:", songs);
+
     dispatch(load(songs));
   }
 };

@@ -1,0 +1,110 @@
+.addNewSongForm {
+  background: #757f9a;
+  background: -webkit-linear-gradient(to top, #d7dde8, #757f9a);
+  background: linear-gradient(to top, #d7dde8, #757f9a);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+  animation-duration: 1s;
+  animation-name: fadein;
+  -webkit-animation-name: fadein;
+  -moz-animation-name: fadein;
+  padding-top: 10px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@-moz-keyframes fadein {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+.form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  font-family: Montserrat;
+  padding: 10px;
+  border-radius: 18px;
+  border: none;
+  font-weight: 400;
+  text-align: center;
+  margin: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.form-title {
+  font-weight: 500;
+  font-size: 2.75em;
+  color: white;
+}
+
+.publish {
+  height: 2em;
+  padding: 0 20px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: white solid 1px;
+  color: white;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 180px;
+}
+
+.publish:hover,
+.publish:focus {
+  color: #757f9a;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
+
+.cancel-button {
+  font-weight: 500;
+  height: 2em;
+  padding: 0 20px;
+  border-radius: 15px;
+  background-color: transparent;
+  border: white solid 1px;
+  color: white;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  width: 180px;
+}
+
+.cancel-button:hover,
+.cancel-button:focus {
+  color: #757f9a;
+  animation-name: fadein;
+  animation-duration: 0.5s;
+}
