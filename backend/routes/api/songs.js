@@ -21,7 +21,7 @@ router.post(
   "/",
   asyncHandler(async (req, res) => {
     const newSong = await Song.create(req.body);
-    return res.redirect(`/home/user/${id}`);
+    return res.redirect(`/home`);
   })
 );
 

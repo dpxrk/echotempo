@@ -1,8 +1,7 @@
 import "./HomePage.css";
-import { NavLink, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { getSongs } from "../../store/song";
 
 function HomePage({ user }) {
@@ -10,6 +9,8 @@ function HomePage({ user }) {
   const songs = useSelector((state) => {
     return state.songs.songList;
   });
+
+  const songContext = useContext(songs);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -33,7 +34,7 @@ function HomePage({ user }) {
               <div>
                 <i
                   class="fas fa-play"
-                  onClick={onClickToPlayNewSong(song.audioFile)}
+                  onClick={onClickToPlayNewSong(song.audiofile)}
                 >
                   {song.title}
                 </i>
@@ -47,7 +48,7 @@ function HomePage({ user }) {
               <div>
                 <i
                   class="fas fa-play"
-                  onClick={onClickToPlayNewSong(song.audioFile)}
+                  onClick={onClickToPlayNewSong(song.audiofile)}
                 >
                   {song.title}
                 </i>
@@ -61,7 +62,7 @@ function HomePage({ user }) {
               <div>
                 <i
                   class="fas fa-play"
-                  onClick={onClickToPlayNewSong(song.audioFile)}
+                  onClick={onClickToPlayNewSong(song.audiofile)}
                 >
                   {song.title}
                 </i>

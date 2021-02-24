@@ -29,7 +29,8 @@ function AddNewSongPage() {
     history.push("/home");
   };
   return (
-    <section className="addNewSongForm">
+    <div className="addNewSongForm">
+      <div className="form-title"> Upload a Song</div>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -56,7 +57,7 @@ function AddNewSongPage() {
           Cancel
         </button>
       </form>
-    </section>
+    </div>
   );
 }
 

@@ -49,21 +49,14 @@ h2 {
 }
 
 .more-of-what-you-like {
-  margin: 0 auto;
-  overflow: hidden;
   grid-area: moreofwhatyoulike;
-  position: relative;
+
   text-align: center;
 }
 
 .EchoTempo-Weekly {
-  margin: 0 auto;
-  padding: 0;
   text-align: center;
   grid-area: echotempoweekly;
-  overflow: hidden;
-  position: relative;
-  justify-content: center;
 }
 
 .recommended {
