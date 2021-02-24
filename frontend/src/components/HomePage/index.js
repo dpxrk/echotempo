@@ -7,15 +7,14 @@ import { getSongs } from "../../store/song";
 
 function HomePage({ user }) {
   const sessionUser = useSelector((state) => state.session.user);
-  const { songId } = useParams();
-  // const songs = useSelector((state)=> {
-  //   return state.song.list.map(songId => state.song[songId])
-  // })
+  const songs = useSelector((state) => {
+    return state.songs.songList;
+  });
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSongs(songId));
-  }, [songId, dispatch]);
+    dispatch(getSongs());
+  }, [dispatch]);
 
   if (!sessionUser) {
     return <Redirect to="/home/login" />;
@@ -26,6 +25,8 @@ function HomePage({ user }) {
       <div className="grid-container">
         <div className="more-of-what-you-like">
           <h2>More of what you like</h2>
+          {console.log("THIS IS SONGS2", songs)}
+          {songs && songs.map((song) => <div>{song.title}</div>)}
         </div>
         <div className="EchoTempo-Weekly">
           <h2>EchoTempo Weekly</h2>

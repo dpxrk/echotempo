@@ -9,8 +9,8 @@ import InitialLandingPage from "./components/InitialLandingPage";
 import HomePage from "./components/HomePage";
 import { useSelector } from "react-redux";
 import AddNewSongPage from "./components/AddNewSongPage";
-
 import ProfilePage from "./components/ProfilePage";
+
 // import theSongPlayerItself from "../src/components/songPlayerFunctions/theSongPlayerItself";
 
 // const findPath = () => {
@@ -33,16 +33,15 @@ function App() {
   return sessionUser ? (
     <>
       <Navigation isLoaded={isLoaded} />
-      {/* <theSongPlayerItself /> */}
       <Switch>
-        <Route path="/home/" user={sessionUser}>
+        <Route exact path="/home" user={sessionUser}>
           <HomePage />
         </Route>
         <Route path="/home/profile" user={sessionUser}>
           <ProfilePage />
         </Route>
         <Route>
-          <AddNewSongPage path="home/addnewsong" />
+          <AddNewSongPage path="/home/profile/addnewsong" />
         </Route>
       </Switch>
     </>

@@ -44,10 +44,10 @@ function Navigation({ isLoaded }) {
           className="bottomAudioBar"
           title="AudioPlayer"
           controls
-          currentTime
-          allow="autoplay"
-          loop="loop"
-          onDurationChange
+          // currentTime
+          // allow="autoplay"
+          // loop="loop"
+          // onDurationChange
           src="/songs/J. Cole - G.O.M.D. (Video).mp3"
         >
           <p>

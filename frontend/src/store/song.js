@@ -19,17 +19,20 @@ const removeSong = (songList, songId) => ({
 });
 
 //action to get all songs.
-export const getSongs = (id) => async (dispatch) => {
-  const response = await fetch(`/api/song/`);
+export const getSongs = () => async (dispatch) => {
+  console.log("WE ARE HERE");
+
+  const response = await fetch(`/api/songs`);
   if (response.ok) {
     const songs = await response.json();
+    console.log("THIS IS SONGS:", songs);
     dispatch(load(songs));
   }
 };
 
 //this is a action for create new song page.
 export const newSong = (payload) => async (dispatch) => {
-  const response = await fetch(`/api/song`, {
+  const response = await fetch(`/api/songs`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -55,9 +58,9 @@ const songReducer = (state = initialState, action) => {
       });
 
       return {
-        ...allSongs,
         ...state,
-        songList: action.list,
+        ...allSongs,
+        songList: action.songList,
       };
     case ADD_SONG:
       if (!state[action.song.id]) {
