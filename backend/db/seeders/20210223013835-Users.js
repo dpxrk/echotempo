@@ -75,7 +75,17 @@ module.exports = {
         {
           email: "Bruno@Mars.com",
           username: "Bruno Mars",
-          hashedPassword: bcrypt.hashSync('password'),
+          hashedPassword: bcrypt.hashSync("password"),
+        },
+        {
+          email: "Calvin@Harris.com", //15
+          username: "Calvin Harris",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: "DJ@Snake.com", //15
+          username: "DJ Snake",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
       ],
       {}

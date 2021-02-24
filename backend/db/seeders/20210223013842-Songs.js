@@ -153,6 +153,40 @@ module.exports = {
           title: "Treasure",
           audiofile: "/songs/Bruno Mars - Treasure (Official Video).mp3",
         },
+        {
+          userId: 15,
+          title: "Blame",
+          audiofile: "/songs/Calvin Harris - Blame ft. John Newman.mp3",
+        },
+        {
+          userId: 15,
+          title: "Outside",
+          audiofile:
+            "/songs/Calvin Harris - Outside (Official Video) ft. Ellie Goulding.mp3",
+        },
+        {
+          userId: 15,
+          title: "Summer",
+          audiofile: "/songs/Calvin Harris - Summer (Official Video).mp3",
+        },
+        {
+          userId: 15,
+          title: "How Deep is Your Love",
+          audiofile:
+            "/songs/Calvin Harris & Disciples - How Deep Is Your Love.mp3",
+        },
+        {
+          userId: 15,
+          title: "One Kiss",
+          audiofile:
+            "/songs/Calvin Harris, Dua Lipa - One Kiss (Official Video).mp3",
+        },
+        {
+          userId: 16,
+          title: "Let Me Love You",
+          audiofile:
+            "songs/DJ Snake - Let Me Love You ft. Justin Bieber (Official Video).mp3",
+        },
       ],
 
       {}
