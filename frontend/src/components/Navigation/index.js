@@ -50,7 +50,11 @@ function Navigation({ isLoaded }) {
         </ul>
       </nav>
       <div className="audioContainer">
-        <div></div>
+        {/* <div className="player">
+          <div className="details">
+            <span className="now-playing"></span>
+          </div>
+        </div> */}
         <audio
           className="bottomAudioBar"
           title="AudioPlayer"

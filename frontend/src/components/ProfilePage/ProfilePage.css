@@ -40,3 +40,7 @@
   display: flex;
   color: white;
 }
+
+.all {
+  justify-content: center;
+}

@@ -20,9 +20,7 @@ function HomePage({ user }) {
     return <Redirect to="/home/login" />;
   }
 
-  const onClickToPlayNewSong = (url) => {
-    new Audio(url).play();
-  };
+  const onClickToPlayNewSong = (url) => {};
 
   return (
     <div className="HomePage">

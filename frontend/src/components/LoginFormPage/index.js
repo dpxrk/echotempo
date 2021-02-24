@@ -13,7 +13,7 @@ function LoginFormPage() {
   const [errors, setErrors] = useState([]);
   const history = useHistory();
 
-  if (sessionUser) return <Redirect to="/home" />;
+  if (sessionUser) return <Redirect to="/home/profile" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +31,6 @@ function LoginFormPage() {
     return dispatch(
       sessionActions.login({ credential: "Demo-lition", password: "password" })
     );
-
   };
 
   const handleNotRegisteredSubmit = (e) => {
@@ -49,9 +48,7 @@ function LoginFormPage() {
             ))}
           </ul>
         ) : null}
-        <div className="outerBox"></div>
-        <div className="innerBox"></div>
-        <div className="innerInnerBox"></div>
+
         <div className="form-title">Login Page</div>
         <div>
           <label>

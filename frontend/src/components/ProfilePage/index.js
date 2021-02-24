@@ -5,9 +5,7 @@ function ProfilePage({ user }) {
   return (
     <div className="ProfilePage">
       <div className="ProfileLinks">
-        <span> All</span>
-        <span> Likes</span>
-        <span> Playlists</span>
+        <div className='all'> All</div>
       </div>
     </div>
   );
