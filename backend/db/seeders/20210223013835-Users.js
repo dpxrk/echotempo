@@ -57,7 +57,26 @@ module.exports = {
           username: "Ariana Grande",
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
-
+        {
+          email: "Avicii@Avicii.com",
+          username: "Avicii",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: "Beyonce@Beyonce.com",
+          username: "Beyonce",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: "Britnay@Spears.com",
+          username: "Britnay Spears",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: "Bruno@Mars.com",
+          username: "Bruno Mars",
+          hashedPassword: bcrypt.hashSync('password'),
+        },
       ],
       {}
     );

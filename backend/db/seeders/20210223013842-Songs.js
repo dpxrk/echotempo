@@ -98,7 +98,60 @@ module.exports = {
           userId: 10,
           title: "Side To Side",
           audiofile:
-            "backend/public/songs/Ariana Grande ft. Nicki Minaj - Side To Side (Official Video) ft. Nicki Minaj.mp3",
+            "/songs/Ariana Grande ft. Nicki Minaj - Side To Side (Official Video) ft. Nicki Minaj.mp3",
+        },
+        {
+          userId: 10,
+          title: "Love Me Harder",
+          audiofile:
+            "/songs/Ariana Grande, The Weeknd - Love Me Harder (Official Video).mp3",
+        },
+        {
+          userId: 11,
+          title: "Hey Brother",
+          audiofile: "/songs/Avicii - Hey Brother.mp3",
+        },
+        {
+          userId: 11,
+          title: "The Nights",
+          audiofile: "/songs/Avicii - The Nights.mp3",
+        },
+        {
+          userId: 11,
+          title: "Wake Me Up",
+          audiofile: "songs/Avicii - Wake Me Up (Official Video).mp3",
+        },
+        {
+          userId: 12,
+          title: "Crazy In Love",
+          audiofile: "songs/Beyoncé - Crazy In Love ft. JAY Z.mp3",
+        },
+        {
+          userId: 12,
+          title: "Single Ladies",
+          audiofile:
+            "/songs/Beyoncé - Single Ladies (Put a Ring on It) (Video Version).mp3",
+        },
+        {
+          userId: 13,
+          title: "Toxic",
+          audiofile: "songs/Britney Spears - Toxic (Official Video).mp3",
+        },
+        {
+          userId: 14,
+          title: "24K Magic",
+          audiofile: "songs/Bruno Mars - 24K Magic (Official Video).mp3",
+        },
+        {
+          userId: 14,
+          title: "Locked Out of Heaven",
+          audiofile:
+            "songs/Bruno Mars - Locked Out Of Heaven (Official Video).mp3",
+        },
+        {
+          userId: 14,
+          title: "Treasure",
+          audiofile: "/songs/Bruno Mars - Treasure (Official Video).mp3",
         },
       ],
 
