@@ -1,12 +1,18 @@
 import "./HomePage.css";
 import { NavLink, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import {useState} from 'react'
+import { useEffect, useState } from "react";
+import { getSongs } from "../../store/song";
 
-function HomePage() {
+function HomePage({ user }) {
   const sessionUser = useSelector((state) => state.session.user);
+  const { songId } = useParams();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getSongs(songId));
+  }, [songId, dispatch]);
 
   if (!sessionUser) {
     return <Redirect to="/home/login" />;

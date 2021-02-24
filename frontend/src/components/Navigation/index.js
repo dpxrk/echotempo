@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 import ProfileButton from "./ProfileButton";
 import "./Navigation.css";
@@ -11,14 +11,15 @@ function Navigation({ isLoaded }) {
   const sessionUser = useSelector((state) => state.session.user);
   const [song, playingSong] = useState("");
 
-  useEffect(() => {
-    
-  })
+  useEffect(() => {});
 
   let profileButton;
   if (sessionUser) {
     profileButton = <ProfileButton user={sessionUser} />;
   }
+  const onClick = () => {
+    <Redirect to="/home/profile" />;
+  };
 
   return (
     <div>
@@ -31,19 +32,23 @@ function Navigation({ isLoaded }) {
             </Link>
           </li>
           <li>
-            <a className="settings-button">{profileButton}</a>
+            <a className="settings-button" onClick={onClick}>
+              {profileButton}
+            </a>
           </li>
         </ul>
       </nav>
       <div className="audioContainer">
+        <div></div>
         <audio
           className="bottomAudioBar"
-          title="THIS IS THE SONG PLAYING"
+          title="AudioPlayer"
           controls
           currentTime
+          allow="autoplay"
           loop="loop"
           onDurationChange
-          src="/songs/2019-06-07_-_Chill_Gaming_-_David_Fesliyan.mp3"
+          src="/songs/J. Cole - G.O.M.D. (Video).mp3"
         >
           <p>
             If you are reading this, it is because your browser does not support

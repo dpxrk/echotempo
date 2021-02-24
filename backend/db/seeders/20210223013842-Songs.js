@@ -42,7 +42,22 @@ module.exports = {
           userId: 6,
           title: "Steady Enjoyment",
           audiofile:
-            "/songs/songs/2021-01-12_-_Steady_Enjoyment_-_www.FesliyanStudios.com_David_Renda.mp3",
+            "/songs/2021-01-12_-_Steady_Enjoyment_-_www.FesliyanStudios.com_David_Renda.mp3",
+        },
+        {
+          userId: 8,
+          title: "All Eyez On Me",
+          audiofile: "/songs/2Pac - All Eyez On Me.mp3",
+        },
+        {
+          userId: 8,
+          title: "Hellrazor",
+          audiofile: "/songs/2Pac - Hellrazor.mp3",
+        },
+        {
+          userId: 8,
+          title: "Holla At Me",
+          audiofile: "/songs/2Pac - Holla At Me.mp3",
         },
       ],
 

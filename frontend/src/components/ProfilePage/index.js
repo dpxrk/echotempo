@@ -1,6 +1,6 @@
 import "./ProfilePage.css";
 
-function ProfilePage() {
+function ProfilePage({ user }) {
   return (
     <div>
       <h2>This is the profile page</h2>

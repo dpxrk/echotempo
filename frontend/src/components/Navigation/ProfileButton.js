@@ -28,7 +28,8 @@ function ProfileButton({ user }) {
   }, [showMenu]);
 
   const onClick = () => {
-    <Redirect to="/home/profile" />;
+    const newPath = "/home/profile";
+    history.push(newPath);
   };
 
   const logout = (e) => {
