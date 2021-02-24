@@ -6,13 +6,13 @@ body {
   background: #757f9a;
   background: -webkit-linear-gradient(to bottom, #d7dde8, #757f9a);
   background: linear-gradient(to bottom, #d7dde8, #757f9a);
-  font-family: Montserrat;
+  
   width: 100vw;
   height: 100vh;
 }
 
 .enterButton {
-  font-family: Montserrat;
+
   opacity: 50;
   background: transparent;
   color: white;

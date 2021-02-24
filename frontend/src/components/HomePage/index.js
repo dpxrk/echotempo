@@ -8,6 +8,9 @@ import { getSongs } from "../../store/song";
 function HomePage({ user }) {
   const sessionUser = useSelector((state) => state.session.user);
   const { songId } = useParams();
+  // const songs = useSelector((state)=> {
+  //   return state.song.list.map(songId => state.song[songId])
+  // })
   const dispatch = useDispatch();
 
   useEffect(() => {

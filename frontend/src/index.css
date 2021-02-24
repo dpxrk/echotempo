@@ -1,6 +1,8 @@
 /* TODO Add site wide styles */
 * {
   overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: Monsterrat;
 }
 
 body {

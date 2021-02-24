@@ -1,13 +1,8 @@
-* {
-  font-family: Montserrat;
-}
-
 h2 {
   color: white;
 }
 
 .HomePage {
-  font-family: Montserrat;
   background: #757f9a;
   background: -webkit-linear-gradient(to top, #d7dde8, #757f9a);
   background: linear-gradient(to top, #d7dde8, #757f9a);

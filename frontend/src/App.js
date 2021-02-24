@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import InitialLandingPage from "./components/InitialLandingPage";
 import HomePage from "./components/HomePage";
 import { useSelector } from "react-redux";
+import AddNewSongPage from "./components/AddNewSongPage";
 
 import ProfilePage from "./components/ProfilePage";
 // import theSongPlayerItself from "../src/components/songPlayerFunctions/theSongPlayerItself";
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path="/home/profile" user={sessionUser}>
           <ProfilePage />
+        </Route>
+        <Route>
+          <AddNewSongPage path="home/addnewsong" />
         </Route>
       </Switch>
     </>
