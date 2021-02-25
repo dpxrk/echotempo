@@ -45,8 +45,8 @@ function App() {
         <Route path="/home/profile" user={sessionUser}>
           <ProfilePage />
         </Route>
-        <Route>
-          <AddNewSongPage path="/home/profile/addnewsong" />
+        <Route path="/home/profile/addnewsong">
+          <AddNewSongPage />
         </Route>
         <Route path="/user/:songId">
           <SingleSongPage songs={songs} />

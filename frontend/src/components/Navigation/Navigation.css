@@ -11,7 +11,7 @@
 .upload,
 .upload:hover,
 .upload:focus {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 30px;
   cursor: pointer;
@@ -20,7 +20,7 @@
 .homeLink,
 .homeLink:hover,
 .homeLink:focus {
-  color: black;
+  color: white;
   text-decoration: none;
   font-style: italic;
   font-size: 30px;

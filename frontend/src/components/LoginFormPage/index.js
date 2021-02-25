@@ -28,7 +28,7 @@ function LoginFormPage() {
 
   const handleDemoSubmit = (e) => {
     e.preventDefault();
-    return dispatch(
+    dispatch(
       sessionActions.login({ credential: "Demo-lition", password: "password" })
     );
   };

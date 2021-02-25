@@ -4,6 +4,7 @@
   cursor: pointer;
   float: right;
   font-size: 25px;
+  color: white;
 }
 
 .profile-bar {
@@ -30,6 +31,7 @@
   cursor: pointer;
   float: left;
   overflow: hidden;
+  color: white;
 }
 
 .settings-button-content {
