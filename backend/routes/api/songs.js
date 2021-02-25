@@ -3,6 +3,7 @@ const router = express.Router();
 
 const { Song } = require("../../db/models");
 const { User } = require("../../db/models");
+const { Comment } = require("../../db/models");
 
 const asyncHandler = require("express-async-handler");
 
@@ -21,8 +22,13 @@ router.get(
 router.post(
   "/",
   asyncHandler(async (req, res) => {
-    const newSong = await Song.create(req.body);
-    res.json(newSong);
+    const { userId, title, audiofile } = req.body;
+    const newSong = await Song.create({
+      userId,
+      title,
+      audiofile,
+    });
+    res.json({ newSong });
     return res.redirect(`/home`);
   })
 );
@@ -37,7 +43,7 @@ router.put(
   })
 );
 
-//get one song
+//get one song with it's comments
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -49,6 +55,11 @@ router.get(
       include: [
         {
           model: User,
+          include: [
+            {
+              model: Comment,
+            },
+          ],
         },
       ],
     });
@@ -63,6 +74,21 @@ router.get(
     });
 
     res.json(singleSong);
+  })
+);
+
+//posting a new comment on a song.
+//userId, songId,content
+router.post(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const { userId, songId, content } = req.body;
+    const newComment = await Comment.create({
+      userId,
+      songId,
+      content,
+    });
+    res.json(newComment);
   })
 );
 

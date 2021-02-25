@@ -63,7 +63,8 @@ function Navigation({ isLoaded }) {
           // allow="autoplay"
           // loop="loop"
           // onDurationChange
-          src="/songs/J. Cole - G.O.M.D. (Video).mp3"
+          src={``}  // will need to somehow change this source when the play button on the homepage
+          // next to one of the songs is clicked.
         >
           <p>
             If you are reading this, it is because your browser does not support

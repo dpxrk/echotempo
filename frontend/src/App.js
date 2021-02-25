@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import AddNewSongPage from "./components/AddNewSongPage";
 import ProfilePage from "./components/ProfilePage";
 import SingleSongPage from "./components/SingleSongPage";
+import SingleUserPage from "./components/SingleUserPage";
 
 // import theSongPlayerItself from "../src/components/songPlayerFunctions/theSongPlayerItself";
 
@@ -24,6 +25,9 @@ import SingleSongPage from "./components/SingleSongPage";
 
 function App() {
   const sessionUser = useSelector((state) => state.session.user);
+  const songs = useSelector((state) => {
+    return state.songs.songList;
+  });
 
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,7 +49,10 @@ function App() {
           <AddNewSongPage path="/home/profile/addnewsong" />
         </Route>
         <Route path="/user/:songId">
-          <SingleSongPage />
+          <SingleSongPage songs={songs} />
+        </Route>
+        <Route>
+          <SingleUserPage />
         </Route>
         <Route>
           <h2> Page Not Found </h2>

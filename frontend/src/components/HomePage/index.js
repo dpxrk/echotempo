@@ -10,7 +10,7 @@ function HomePage({ user }) {
     return state.songs.songList;
   });
 
-  const songContext = useContext(songs);
+  // const songContext = useContext(songs);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +21,11 @@ function HomePage({ user }) {
     return <Redirect to="/home/login" />;
   }
 
-  const onClickToPlayNewSong = (url) => {};
+  const track = {};
+
+  const onClickToPlayNewSong = (url) => {
+    // new Audio.src(url); <--- EVENT HANDLER TO PLAY A NEW SONG.
+  };
 
   return (
     <div className="HomePage">
@@ -36,7 +40,7 @@ function HomePage({ user }) {
                   class="fas fa-play"
                   onClick={onClickToPlayNewSong(song.audiofile)}
                 >
-                  {song.title}
+                  {song.title} by {song.userId}
                 </i>
               </div>
             ))}
@@ -50,7 +54,7 @@ function HomePage({ user }) {
                   class="fas fa-play"
                   onClick={onClickToPlayNewSong(song.audiofile)}
                 >
-                  {song.title}
+                  {song.title} by {song.userId}
                 </i>
               </div>
             ))}
@@ -64,7 +68,7 @@ function HomePage({ user }) {
                   class="fas fa-play"
                   onClick={onClickToPlayNewSong(song.audiofile)}
                 >
-                  {song.title}
+                  {song.title} by {song.userId}
                 </i>
               </div>
             ))}

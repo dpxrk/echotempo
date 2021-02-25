@@ -6,6 +6,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
 const { User } = require("../../db/models");
+const { Song } = require("../../db/models");
 
 const validateSignup = [
   check("email")
@@ -50,6 +51,41 @@ router.post(
     return res.json({
       user,
     });
+  })
+);
+
+//get all users
+// router.get(
+//   "/:id",
+//   asyncHandler(async (req, res) => {
+//     const userId = parseInt(req.params.id);
+//     const user = await User.findAll({
+//       where: {
+//         id: userId,
+//       },
+//       include: [
+//         {
+//           model: Song,
+//         },
+//       ],
+//     });
+
+//     res.json(user);
+//   })
+// );
+
+//get one user
+router.get(
+  "/:id(\\d+)/",
+  asyncHandler(async (req, res) => {
+    const userId = parseInt(req.params.id, 10);
+    const user = await User.findByPk({
+      where: {
+        id: userId,
+      },
+      include: [{ model: Song }],
+    });
+    res.json({ username: user.userName, userId: user.id, songs: songId });
   })
 );
 
