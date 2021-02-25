@@ -10,6 +10,7 @@ import HomePage from "./components/HomePage";
 import { useSelector } from "react-redux";
 import AddNewSongPage from "./components/AddNewSongPage";
 import ProfilePage from "./components/ProfilePage";
+import SingleSongPage from "./components/SingleSongPage";
 
 // import theSongPlayerItself from "../src/components/songPlayerFunctions/theSongPlayerItself";
 
@@ -42,6 +43,12 @@ function App() {
         </Route>
         <Route>
           <AddNewSongPage path="/home/profile/addnewsong" />
+        </Route>
+        <Route path="/user/:songId">
+          <SingleSongPage />
+        </Route>
+        <Route>
+          <h2> Page Not Found </h2>
         </Route>
       </Switch>
     </>

@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf";
+
 const ADD_SONG = "song/ADD_SONG";
 const LOAD_SONG = "song/LOAD_SONG";
 const REMOVE_SONG = "song/REMOVE_SONG";
@@ -20,7 +22,7 @@ const removeSong = (songList, songId) => ({
 
 //action to get all songs.
 export const getSongs = () => async (dispatch) => {
-  const response = await fetch(`/api/songs`);
+  const response = await csrfFetch(`/api/songs`);
   if (response.ok) {
     const songs = await response.json();
 
@@ -28,9 +30,19 @@ export const getSongs = () => async (dispatch) => {
   }
 };
 
+//action to get one song
+export const getOneSong = (id) => async (dispatch) => {
+  const response = await csrfFetch(`/api/songs/${id}`);
+
+  if (response.ok) {
+    const song = await response.json();
+    dispatch(addSong(song));
+  }
+};
+
 //this is a action for create new song page.
 export const newSong = (payload) => async (dispatch) => {
-  const response = await fetch(`/api/songs`, {
+  const response = await csrfFetch(`/api/songs`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),

@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const { Song } = require("../../db/models");
+const { User } = require("../../db/models");
 
 const asyncHandler = require("express-async-handler");
 
@@ -21,6 +22,7 @@ router.post(
   "/",
   asyncHandler(async (req, res) => {
     const newSong = await Song.create(req.body);
+    res.json(newSong);
     return res.redirect(`/home`);
   })
 );
@@ -39,8 +41,28 @@ router.put(
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
-    const song = await Song.one(req.params.id); //telling me that one is not a function.
-    return res.json(song);
+    const songId = parseInt(req.params.id);
+    const songs = await Song.findAll({
+      where: {
+        id: songId,
+      },
+      include: [
+        {
+          model: User,
+        },
+      ],
+    });
+
+    const singleSong = songs.map((song) => {
+      return {
+        songId: song.id,
+        Artist: song.userId,
+        Title: song.title,
+        audiofile: song.audiofile,
+      };
+    });
+
+    res.json(singleSong);
   })
 );
 
