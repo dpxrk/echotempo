@@ -38,14 +38,27 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
 
           {songs &&
             songs.map((song) => (
-              <div key={song.id}>
-                <button className="playButton">
-                  <i
+              <div
+                className="carousel"
+                key={song.id}
+                value={song.audiofile}
+                onClick={onClickForNewSong}
+              >
+                <button
+                  className="playButton"
+                  value={song.audiofile}
+                  onClick={onClickForNewSong}
+                >
+                  Play
+                  {/* <i
+                    value={song.audiofile}
+                    onClick={onClickForNewSong}
                     className="fas fa-play"
-                    // onClick={(e) => setSongPlaying(song.audiofile)}
-                  ></i>
+                  >
+                    {" "}
+                  </i> */}
                 </button>
-                {song.title} by {song.userId}
+                {song.title} by {/*{song.artist}*/}
                 {/*need to show that song.userId is the artist playing. */}
               </div>
             ))}
@@ -74,7 +87,7 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
                     {" "}
                   </i> */}
                 </button>
-                {song.title} by {song.userId}
+                {song.title} by {/*{song.artist}*/}
                 {/*need to show that song.userId is the artist playing. */}
               </div>
             ))}
@@ -83,14 +96,27 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
           <h2 className="recommended-title">Recommended</h2>
           {songs &&
             songs.map((song) => (
-              <div key={song.id}>
-                <button className="playButton">
-                  <i
+              <div
+                className="carousel"
+                key={song.id}
+                value={song.audiofile}
+                onClick={onClickForNewSong}
+              >
+                <button
+                  className="playButton"
+                  value={song.audiofile}
+                  onClick={onClickForNewSong}
+                >
+                  Play
+                  {/* <i
+                    value={song.audiofile}
+                    onClick={onClickForNewSong}
                     className="fas fa-play"
-                    // onClick={(e) => setSongPlaying(song.audiofile)}
-                  ></i>
+                  >
+                    {" "}
+                  </i> */}
                 </button>
-                {song.title} by {song.userId}
+                {song.title} by {/*{song.artist}*/}
                 {/*need to show that song.userId is the artist playing. */}
               </div>
             ))}

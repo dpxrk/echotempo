@@ -40,21 +40,19 @@ router.get(
   "/",
   asyncHandler(async (req, res) => {
     const songList = await Song.findAll({ include: { model: User } });
-    // const song = songList.map((song) => {
-    // console.log("THIS iS SONG:", song);
+    const song = songList.map((song) => {
+      console.log("THIS iS SONG:", song);
 
-    //   if (song.Users[0]) {
-    //     return {
-    //       id: song.id,
-    //       artist: song.Users[0].username,
-    //       Title: song.title,
-    //       audiofile: song.audiofile,
-    //     };
-    //   }
-    // });
+      return {
+        id: song.id,
+        artist: song.Users[0],
+        Title: song.title,
+        audiofile: song.audiofile,
+      };
+    });
 
     // console.log("this is the song", song);
-    return res.json(songList);
+    return res.json(song);
   })
 );
 
