@@ -9,12 +9,52 @@ const asyncHandler = require("express-async-handler");
 
 //'./api/songs'
 
-//get all songs
+//get all songs based on Users Id
+router.get(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const userId = parseInt(req.params.id, 10);
+    // console.log("THIS IS USERID:", userId);
+    const songList = await Song.findAll({
+      where: {
+        userId,
+      },
+      include: [{ model: User }],
+    });
+    const song = songList.map((song) => {
+      // console.log("THIS iS SONG:", song);
+      return {
+        songId: song.id,
+        artist: song.Users[0].username,
+        Title: song.title,
+        audiofile: song.audiofile,
+      };
+    });
+
+    // console.log("THIS iS SONG2:", song);
+    return res.json(song);
+  })
+);
+
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const songs = await Song.findAll({ include: { model: User } });
-    return res.json(songs);
+    const songList = await Song.findAll({ include: { model: User } });
+    // const song = songList.map((song) => {
+    // console.log("THIS iS SONG:", song);
+
+    //   if (song.Users[0]) {
+    //     return {
+    //       id: song.id,
+    //       artist: song.Users[0].username,
+    //       Title: song.title,
+    //       audiofile: song.audiofile,
+    //     };
+    //   }
+    // });
+
+    // console.log("this is the song", song);
+    return res.json(songList);
   })
 );
 

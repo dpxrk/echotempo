@@ -2,7 +2,7 @@ import "./HomePage.css";
 import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState, useContext } from "react";
-import { getSongs } from "../../store/song";
+import { getSongs, getAllSongs } from "../../store/song";
 
 function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -14,8 +14,9 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getSongs());
-  }, [dispatch]);
+    dispatch(getSongs(sessionUser.id));
+    dispatch(getAllSongs());
+  }, [dispatch, sessionUser.id]);
   // comes back as JSON. Will need to be able to obtain {`{song.audiofile}`} on a click.
 
   if (!sessionUser) {
@@ -53,7 +54,8 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
           <h2>EchoTempo Weekly</h2>
           {songs &&
             songs.map((song) => (
-              <div className='carousel'
+              <div
+                className="carousel"
                 key={song.id}
                 value={song.audiofile}
                 onClick={onClickForNewSong}
