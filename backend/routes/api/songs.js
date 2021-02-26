@@ -13,7 +13,7 @@ const asyncHandler = require("express-async-handler");
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const songs = await Song.findAll();
+    const songs = await Song.findAll({ include: { model: User } });
     return res.json(songs);
   })
 );

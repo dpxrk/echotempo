@@ -41,11 +41,11 @@ function ProfileButton({ user }) {
   return (
     <div className="profile-bar">
       <button className="profile-button-dropdown" onClick={onClick}>
-        <i class="far fa-user-circle" />
+        <i className="far fa-user-circle" />
         {user.username}
       </button>
       <button className="settings-button" onClick={openMenu}>
-        <i class="fas fa-ellipsis-h"></i>
+        <i className="fas fa-ellipsis-h"></i>
         {showMenu && (
           <div>
             <div className="profile-list-item">User email: {user.email}</div>

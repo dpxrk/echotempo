@@ -95,6 +95,8 @@ li {
   cursor: pointer;
 }
 
-.playbutton {
-  curosr: pointer;
+.playButton {
+  cursor: pointer;
+  border: none;
+  background: transparent;
 }
