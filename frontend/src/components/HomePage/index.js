@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState, useContext } from "react";
 import { getSongs } from "../../store/song";
 
-function HomePage({ user }) {
-  const [songPlaying, setSongPlaying] = useState("");
+function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -23,16 +22,12 @@ function HomePage({ user }) {
     return <Redirect to="/home/login" />;
   }
 
-  const onClickToPlayNewSong = (url) => {
-    // new Audio.src(url); <--- EVENT HANDLER TO PLAY A NEW SONG.
-  };
-
-  const randomNumberA = Math.floor(Math.random() * songs.length - 1);
-  const randomNumberB = Math.floor(Math.random() * songs.length - 1);
-  const randomNumberC = Math.floor(Math.random() * songs.length - 1);
-  const randomNumberD = Math.floor(Math.random() * songs.length - 1);
-  const randomNumberE = Math.floor(Math.random() * songs.length - 1);
-  const randomNumberF = Math.floor(Math.random() * songs.length - 1);
+  // const randomNumberA = Math.floor(Math.random() * songs.length - 1);
+  // const randomNumberB = Math.floor(Math.random() * songs.length - 1);
+  // const randomNumberC = Math.floor(Math.random() * songs.length - 1);
+  // const randomNumberD = Math.floor(Math.random() * songs.length - 1);
+  // const randomNumberE = Math.floor(Math.random() * songs.length - 1);
+  // const randomNumberF = Math.floor(Math.random() * songs.length - 1);
 
   return (
     <div className="HomePage">
@@ -41,12 +36,12 @@ function HomePage({ user }) {
           <h2>More of what you like</h2>
 
           {songs &&
-            songs.slice(0, randomNumberB).map((song) => (
+            songs.map((song) => (
               <div key={song.id}>
                 <button className="playButton">
                   <i
                     className="fas fa-play"
-                    onClick={(e) => setSongPlaying(song.audiofile)}
+                    // onClick={(e) => setSongPlaying(song.audiofile)}
                   ></i>
                 </button>
                 {song.title} by {song.userId}
@@ -57,13 +52,25 @@ function HomePage({ user }) {
         <div className="EchoTempo-Weekly">
           <h2>EchoTempo Weekly</h2>
           {songs &&
-            songs.slice(0, randomNumberD).map((song) => (
-              <div key={song.id}>
-                <button className="playButton">
-                  <i
+            songs.map((song) => (
+              <div className='carousel'
+                key={song.id}
+                value={song.audiofile}
+                onClick={onClickForNewSong}
+              >
+                <button
+                  className="playButton"
+                  value={song.audiofile}
+                  onClick={onClickForNewSong}
+                >
+                  Play
+                  {/* <i
+                    value={song.audiofile}
+                    onClick={onClickForNewSong}
                     className="fas fa-play"
-                    onClick={(e) => setSongPlaying(song.audiofile)}
-                  ></i>
+                  >
+                    {" "}
+                  </i> */}
                 </button>
                 {song.title} by {song.userId}
                 {/*need to show that song.userId is the artist playing. */}
@@ -73,12 +80,12 @@ function HomePage({ user }) {
         <div className="recommended">
           <h2 className="recommended-title">Recommended</h2>
           {songs &&
-            songs.slice(0, randomNumberF).map((song) => (
+            songs.map((song) => (
               <div key={song.id}>
                 <button className="playButton">
                   <i
                     className="fas fa-play"
-                    onClick={(e) => setSongPlaying(song.audiofile)}
+                    // onClick={(e) => setSongPlaying(song.audiofile)}
                   ></i>
                 </button>
                 {song.title} by {song.userId}

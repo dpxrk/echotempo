@@ -28,6 +28,21 @@ function App() {
   const songs = useSelector((state) => {
     return state.songs.songList;
   });
+  const [songPlaying, setSongPlaying] = useState(false);
+  const [songUrl, setSongUrl] = useState("");
+
+  const onClickForNewSong = (e) => {
+    e.preventDefault();
+    console.log("THIS IS E.TARAGET:", e.target.value);
+    // songPlaying ? setSongPlaying(true) : setSongPlaying(false);
+    if (songPlaying) {
+      setSongUrl(e.target.value);
+      setSongPlaying(true);
+    } else {
+      setSongUrl(e.target.value);
+      setSongPlaying(true);
+    }
+  };
 
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,22 +52,26 @@ function App() {
 
   return sessionUser ? (
     <>
-      <Navigation isLoaded={isLoaded} />
+      <Navigation isLoaded={isLoaded} songUrl={songUrl} />
       <Switch>
-        <Route exact path="/home" user={sessionUser}>
-          <HomePage />
+        <Route exact path="/home">
+          <HomePage
+            songPlaying={songPlaying}
+            setSongPlaying={setSongPlaying}
+            onClickForNewSong={onClickForNewSong}
+          />
         </Route>
-        <Route path="/home/profile" user={sessionUser}>
-          <ProfilePage />
+        <Route path="/home/profile">
+          <ProfilePage songPlaying={songPlaying} />
         </Route>
         <Route path="/home/addnewsong">
-          <AddNewSongPage />
+          <AddNewSongPage songPlaying={songPlaying} />
         </Route>
         <Route path="/user/:songId">
-          <SingleSongPage songs={songs} />
+          <SingleSongPage songPlaying={songPlaying} />
         </Route>
         <Route path="/user">
-          <SingleUserPage />
+          <SingleUserPage songPlaying={songPlaying} />
         </Route>
         <Route>
           <h2> Page Not Found </h2>

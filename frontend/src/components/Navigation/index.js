@@ -7,9 +7,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getSongs } from "../../store/song";
 
-function Navigation({ isLoaded }) {
-  const [songPlaying, setSongPlaying] = useState("");
-
+function Navigation({ isLoaded, songUrl }) {
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -61,8 +59,9 @@ function Navigation({ isLoaded }) {
           className="bottomAudioBar"
           title="AudioPlayer"
           controls
-          value={songPlaying}
-          src={`/songs/kai exo 음 mmmh.mp3`} // will need to somehow change this source when the play button on the homepage
+          autoplay="false"
+          value={songUrl}
+          src={songUrl} // will need to somehow change this source when the play button on the homepage
           // next to one of the songs is clicked.
         >
           <p>
