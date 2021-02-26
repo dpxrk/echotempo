@@ -2,6 +2,10 @@ h2 {
   color: white;
 }
 
+body {
+  overflow: hidden;
+}
+
 .HomePage {
   background: #757f9a;
   background: -webkit-linear-gradient(to top, #d7dde8, #757f9a);
@@ -48,22 +52,31 @@ h2 {
   grid-template-areas: "moreofwhatyoulike echotempoweekly recommended";
 }
 
-.more-of-what-you-like {
+.more-of-what-you-like-carousel {
   grid-area: moreofwhatyoulike;
   text-align: center;
+  height: 451px;
+  overflow: hidden;
 }
 
-.EchoTempo-Weekly {
+.EchoTempo-Weekly-carousel {
   text-align: center;
   grid-area: echotempoweekly;
+  overflow: hidden;
 }
 
 .recommended {
   grid-area: recommended;
   text-align: center;
+  overflow: hidden;
 }
-.recommended-title {
+.recommended-title-carousel {
   text-align: center;
+}
+
+.carousel-items {
+  font-size: 18px;
+  overflow: hidden;
 }
 
 @keyframes fadein {

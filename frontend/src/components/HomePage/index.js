@@ -3,6 +3,9 @@ import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState, useContext } from "react";
 import { getSongs, getAllSongs } from "../../store/song";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
   const sessionUser = useSelector((state) => state.session.user);
@@ -10,15 +13,50 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
     return state.songs.songList;
   });
 
-  console.log("THIS IS THE SONGS STATE", songs);
-  // const songContext = useContext(songs);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getSongs(sessionUser.id));
     dispatch(getAllSongs());
   }, [dispatch, sessionUser.id]);
-  // comes back as JSON. Will need to be able to obtain {`{song.audiofile}`} on a click.
+
+  const randomNumber1 = Math.floor(Math.random() * songs.length - 2);
+  const randomNumber2 = Math.floor(Math.random() * songs.length - 1);
+  const randomNumber3 = Math.floor(Math.random() * songs.length - 5);
+
+  const carouselSettings1 = {
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 8,
+    pauseOnHover: true,
+    vertical: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    initialSlide: randomNumber1,
+    cssEase: "linear",
+  };
+  const carouselSettings2 = {
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 8,
+    pauseOnHover: true,
+    vertical: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    initialSlide: randomNumber2,
+    cssEase: "linear",
+  };
+  const carouselSettings3 = {
+    infinite: true,
+    speed: 2000,
+    slidesToShow: 8,
+    pauseOnHover: true,
+    vertical: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    initialSlide: randomNumber3,
+    cssEase: "linear",
+  };
 
   if (!sessionUser) {
     return <Redirect to="/home/login" />;
@@ -27,72 +65,74 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
   return (
     <div className="HomePage">
       <div className="grid-container">
-        <div className="more-of-what-you-like">
+        <div className="more-of-what-you-like-carousel">
           <h2>More of what you like</h2>
-
-          {songs &&
-            songs.map((song) => (
-              <div
-                className="carousel"
-                key={song.id}
-                value={song.audiofile}
-                onClick={onClickForNewSong}
-              >
-                <button
-                  className="playButton"
+          <Slider {...carouselSettings1}>
+            {songs &&
+              songs.map((song) => (
+                <div
+                  className="carousel-items"
+                  key={song.id}
                   value={song.audiofile}
                   onClick={onClickForNewSong}
                 >
-                  Play
-                </button>
-                {song.Title} by {song.artist}
-                {/*need to show that song.userId is the artist playing. */}
-              </div>
-            ))}
+                  <button
+                    className="playButton"
+                    value={song.audiofile}
+                    onClick={onClickForNewSong}
+                  >
+                    Play
+                  </button>
+                  {song.Title} by {song.artist}
+                </div>
+              ))}
+          </Slider>
         </div>
-        <div className="EchoTempo-Weekly">
+        <div className="EchoTempo-Weekly-carousel">
           <h2>EchoTempo Weekly</h2>
-          {songs &&
-            songs.map((song) => (
-              <div
-                className="carousel"
-                key={song.id}
-                value={song.audiofile}
-                onClick={onClickForNewSong}
-              >
-                <button
-                  className="playButton"
+          <Slider {...carouselSettings2}>
+            {songs &&
+              songs.map((song) => (
+                <div
+                  className="carousel-items"
+                  key={song.id}
                   value={song.audiofile}
                   onClick={onClickForNewSong}
                 >
-                  Play
-                </button>
-                {song.Title} by {song.artist}
-                {/*need to show that song.userId is the artist playing. */}
-              </div>
-            ))}
+                  <button
+                    className="playButton"
+                    value={song.audiofile}
+                    onClick={onClickForNewSong}
+                  >
+                    Play
+                  </button>
+                  {song.Title} by {song.artist}
+                </div>
+              ))}
+          </Slider>
         </div>
         <div className="recommended">
-          <h2 className="recommended-title">Recommended</h2>
-          {songs &&
-            songs.map((song) => (
-              <div
-                className="carousel"
-                key={song.id}
-                value={song.audiofile}
-                onClick={onClickForNewSong}
-              >
-                <button
-                  className="playButton"
+          <h2 className="recommended-title-carousel">Recommended</h2>
+          <Slider {...carouselSettings3}>
+            {songs &&
+              songs.map((song) => (
+                <div
+                  className="carousel-items"
+                  key={song.id}
                   value={song.audiofile}
                   onClick={onClickForNewSong}
                 >
-                  Play
-                </button>
-                {song.Title} by {song.artist}
-                {/*need to show that song.userId is the artist playing. */}
-              </div>
-            ))}
+                  <button
+                    className="playButton"
+                    value={song.audiofile}
+                    onClick={onClickForNewSong}
+                  >
+                    Play
+                  </button>
+                  {song.Title} by {song.artist}
+                </div>
+              ))}
+          </Slider>
         </div>
       </div>
     </div>
