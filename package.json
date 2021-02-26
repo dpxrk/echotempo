@@ -22,6 +22,7 @@
     "react-native-scrubber": "^1.1.5",
     "react-player": "^2.9.0",
     "react-spotify-api": "^3.0.0",
+    "sequelize": "^6.5.0",
     "soundcloud": "^3.3.2",
     "use-spotify-web-playback-sdk": "^0.2.2"
   }

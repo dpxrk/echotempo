@@ -8,7 +8,8 @@ import { useState, useEffect } from "react";
 import { getSongs } from "../../store/song";
 
 function Navigation({ isLoaded }) {
-  // const audioObj = new Audio(url);
+  const [songPlaying, setSongPlaying] = useState("");
+
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -56,14 +57,12 @@ function Navigation({ isLoaded }) {
           </div>
         </div> */}
         <audio
+          id="audio"
           className="bottomAudioBar"
           title="AudioPlayer"
           controls
-          // currentTime
-          // allow="autoplay"
-          // loop="loop"
-          // onDurationChange
-          src={``}  // will need to somehow change this source when the play button on the homepage
+          value={songPlaying}
+          src={`/songs/kai exo 음 mmmh.mp3`} // will need to somehow change this source when the play button on the homepage
           // next to one of the songs is clicked.
         >
           <p>

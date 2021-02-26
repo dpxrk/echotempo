@@ -5,16 +5,19 @@ function ProfilePage({ user }) {
   const history = useHistory();
   const onClickForAll = (e) => {
     e.preventDefault();
-    history.push("/profile");
+    history.push("/home/profile");
   };
   const onClickForPlaylists = (e) => {
     e.preventDefault();
-    history.push("/profile/playlists");
+    history.push("/home/profile/playlists");
   };
   const onClickForLikes = (e) => {
     e.preventDefault();
-    history.push("/profile/likes");
+    history.push("/home/profile/likes");
   };
+
+  // on this page, need to be able to render through lists//playlists although these were the bonuses.
+
 
   return (
     <div className="ProfilePage">

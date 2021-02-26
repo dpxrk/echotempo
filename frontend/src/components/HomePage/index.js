@@ -5,6 +5,7 @@ import { useEffect, useState, useContext } from "react";
 import { getSongs } from "../../store/song";
 
 function HomePage({ user }) {
+  const [songPlaying, setSongPlaying] = useState("");
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -37,10 +38,12 @@ function HomePage({ user }) {
             songs.map((song) => (
               <div>
                 <i
+                  className="playButton"
                   class="fas fa-play"
                   onClick={onClickToPlayNewSong(song.audiofile)}
                 >
                   {song.title} by {song.userId}
+                  {/*need to show that song.userId is the artist playing. */}
                 </i>
               </div>
             ))}
@@ -51,10 +54,12 @@ function HomePage({ user }) {
             songs.map((song) => (
               <div>
                 <i
+                  className="playButton"
                   class="fas fa-play"
                   onClick={onClickToPlayNewSong(song.audiofile)}
                 >
                   {song.title} by {song.userId}
+                  {/*need to show that song.userId is the artist playing. */}
                 </i>
               </div>
             ))}
@@ -65,10 +70,12 @@ function HomePage({ user }) {
             songs.map((song) => (
               <div>
                 <i
+                  className="playButton"
                   class="fas fa-play"
                   onClick={onClickToPlayNewSong(song.audiofile)}
                 >
                   {song.title} by {song.userId}
+                  {/*need to show that song.userId is the artist playing. */}
                 </i>
               </div>
             ))}
