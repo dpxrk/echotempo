@@ -24,7 +24,7 @@ router.get(
     const song = songList.map((song) => {
       // console.log("THIS iS SONG:", song);
       return {
-        songId: song.id,
+        id: song.id,
         artist: song.Users[0].username,
         Title: song.title,
         audiofile: song.audiofile,
@@ -39,20 +39,19 @@ router.get(
 router.get(
   "/",
   asyncHandler(async (req, res) => {
-    const songList = await Song.findAll({ include: { model: User } });
-    const song = songList.map((song) => {
-      console.log("THIS iS SONG:", song);
-
+    const song = await Song.findAll({ include: { model: User } });
+    const songList = song.map((song) => {
+      // console.log("THIS IS WHAT SONG LOOKS LIKE", song);
       return {
         id: song.id,
-        artist: song.Users[0],
+        artist: song.Users[0].username,
         Title: song.title,
         audiofile: song.audiofile,
       };
     });
 
-    // console.log("this is the song", song);
-    return res.json(song);
+    // console.log("this is the songLIST", songList);
+    return res.json(songList);
   })
 );
 

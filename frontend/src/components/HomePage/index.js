@@ -10,6 +10,7 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
     return state.songs.songList;
   });
 
+  console.log("THIS IS THE SONGS STATE", songs);
   // const songContext = useContext(songs);
   const dispatch = useDispatch();
 
@@ -22,13 +23,6 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
   if (!sessionUser) {
     return <Redirect to="/home/login" />;
   }
-
-  // const randomNumberA = Math.floor(Math.random() * songs.length - 1);
-  // const randomNumberB = Math.floor(Math.random() * songs.length - 1);
-  // const randomNumberC = Math.floor(Math.random() * songs.length - 1);
-  // const randomNumberD = Math.floor(Math.random() * songs.length - 1);
-  // const randomNumberE = Math.floor(Math.random() * songs.length - 1);
-  // const randomNumberF = Math.floor(Math.random() * songs.length - 1);
 
   return (
     <div className="HomePage">
@@ -50,15 +44,8 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
                   onClick={onClickForNewSong}
                 >
                   Play
-                  {/* <i
-                    value={song.audiofile}
-                    onClick={onClickForNewSong}
-                    className="fas fa-play"
-                  >
-                    {" "}
-                  </i> */}
                 </button>
-                {song.title} by {/*{song.artist}*/}
+                {song.Title} by {song.artist}
                 {/*need to show that song.userId is the artist playing. */}
               </div>
             ))}
@@ -79,15 +66,8 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
                   onClick={onClickForNewSong}
                 >
                   Play
-                  {/* <i
-                    value={song.audiofile}
-                    onClick={onClickForNewSong}
-                    className="fas fa-play"
-                  >
-                    {" "}
-                  </i> */}
                 </button>
-                {song.title} by {/*{song.artist}*/}
+                {song.Title} by {song.artist}
                 {/*need to show that song.userId is the artist playing. */}
               </div>
             ))}
@@ -108,15 +88,8 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
                   onClick={onClickForNewSong}
                 >
                   Play
-                  {/* <i
-                    value={song.audiofile}
-                    onClick={onClickForNewSong}
-                    className="fas fa-play"
-                  >
-                    {" "}
-                  </i> */}
                 </button>
-                {song.title} by {/*{song.artist}*/}
+                {song.Title} by {song.artist}
                 {/*need to show that song.userId is the artist playing. */}
               </div>
             ))}

@@ -22,7 +22,7 @@ const removeSong = (songList, songId) => ({
 
 //action to get all songs based on likes.
 export const getSongs = (id) => async (dispatch) => {
-  console.log("THIS IS THE ID", id);
+  // console.log("THIS IS THE ID", id);
   const response = await fetch(`/api/songs/`);
   if (response.ok) {
     const songs = await response.json();
