@@ -33,8 +33,7 @@ function App() {
 
   const onClickForNewSong = (e) => {
     e.preventDefault();
-    // console.log("THIS IS E.TARAGET:", e.target.value);
-    // songPlaying ? setSongPlaying(true) : setSongPlaying(false);
+   
     if (songPlaying) {
       setSongUrl(e.target.value);
       setSongPlaying(true);

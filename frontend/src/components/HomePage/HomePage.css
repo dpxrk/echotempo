@@ -1,3 +1,7 @@
+.slick-track {
+  overflow: hidden;
+}
+
 h2 {
   color: white;
 }
@@ -77,6 +81,14 @@ body {
 .carousel-items {
   font-size: 18px;
   overflow: hidden;
+}
+
+.audioInfo {
+  text-align: center;
+  display: block;
+  margin-top: 114px;
+  padding: 20px;
+  font-size: 24px;
 }
 
 @keyframes fadein {

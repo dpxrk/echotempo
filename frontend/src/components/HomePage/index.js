@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
+function HomePage({ onClickForNewSong }) {
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -20,42 +20,45 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
     dispatch(getAllSongs());
   }, [dispatch, sessionUser.id]);
 
-  const randomNumber1 = Math.floor(Math.random() * songs.length - 2);
-  const randomNumber2 = Math.floor(Math.random() * songs.length - 1);
-  const randomNumber3 = Math.floor(Math.random() * songs.length - 5);
+  const randomNumber1 = Math.floor(Math.random() * songs.length - 5);
+  const randomNumber2 = Math.floor(Math.random() * songs.length - 2);
+  const randomNumber3 = Math.floor(Math.random() * songs.length - 1);
 
   const carouselSettings1 = {
     infinite: true,
     speed: 2000,
-    slidesToShow: 8,
+    slidesToShow: 10,
     pauseOnHover: true,
     vertical: true,
     autoplay: true,
     autoplaySpeed: 2000,
     initialSlide: randomNumber1,
     cssEase: "linear",
+    centerMode: true,
   };
   const carouselSettings2 = {
     infinite: true,
     speed: 2000,
-    slidesToShow: 8,
+    slidesToShow: 10,
     pauseOnHover: true,
     vertical: true,
     autoplay: true,
     autoplaySpeed: 2000,
     initialSlide: randomNumber2,
     cssEase: "linear",
+    centerMode: true,
   };
   const carouselSettings3 = {
     infinite: true,
     speed: 2000,
-    slidesToShow: 8,
+    slidesToShow: 10,
     pauseOnHover: true,
     vertical: true,
     autoplay: true,
     autoplaySpeed: 2000,
     initialSlide: randomNumber3,
     cssEase: "linear",
+    centerMode: true,
   };
 
   if (!sessionUser) {
@@ -134,6 +137,11 @@ function HomePage({ songPlaying, setSongPlaying, onClickForNewSong }) {
               ))}
           </Slider>
         </div>
+      </div>
+      <div className="audioInfo">
+        <div>Song Title:</div>
+        <div></div>
+        <div>Song Artist:</div>
       </div>
     </div>
   );
