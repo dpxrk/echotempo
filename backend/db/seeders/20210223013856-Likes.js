@@ -143,6 +143,13 @@ module.exports = {
         userId: 17,
         songId: 35,
       },
+      { userId: 18, songId: 36 },
+      { userId: 18, songId: 37 },
+      { userId: 18, songId: 38 },
+      { userId: 18, songId: 39 },
+      { userId: 18, songId: 40 },
+      { userId: 19, songId: 41 },
+      { userId: 20, songId: 42 },
     ]);
   },
 

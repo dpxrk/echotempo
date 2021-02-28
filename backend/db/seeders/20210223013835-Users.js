@@ -97,6 +97,16 @@ module.exports = {
           username: "Katy Perry",
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
+        {
+          email: "Ke$ha@Ke$ha.com", //19
+          username: "Ke$ha",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: "Keith@Ape.com", //20
+          username: "Keith Ape",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
 
       ],
       {}

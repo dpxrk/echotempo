@@ -198,6 +198,37 @@ module.exports = {
           audiofile:
             "/songs/Katy Perry - California Gurls (Official Music Video) ft. Snoop Dogg.mp3",
         },
+        {
+          userId: 18,
+          title: "Firework",
+          audiofile: "/songs/Katy Perry - Firework (Official Music Video).mp3",
+        },
+        {
+          userId: 18,
+          title: "Hot N Cold",
+          audiofile: "/songs/Katy Perry - Firework (Official Music Video).mp3",
+        },
+        {
+          userId: 18,
+          title: "Last Friday",
+          audiofile:
+            "/songs/Katy Perry - Last Friday Night (T.G.I.F.) (Official Music Video).mp3",
+        },
+        {
+          userId: 18, //song 40
+          title: "Roar",
+          audiofile: "/songs/Katy Perry - Roar (Official).mp3",
+        },
+        {
+          userId: 19,
+          title: "Tik Tok",
+          audiofile: "/songs/Katy Perry - Roar (Official).mp3",
+        },
+        {
+          userId: 20,
+          title: "It G Ma",
+          audiofile: "/songs/Katy Perry - Roar (Official).mp3",
+        },
       ],
 
       {}
