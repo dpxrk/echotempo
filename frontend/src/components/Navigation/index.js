@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getSongs } from "../../store/song";
 
-function Navigation({ isLoaded, songUrl }) {
+function Navigation({ isLoaded, selectedSong }) {
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -48,6 +48,7 @@ function Navigation({ isLoaded, songUrl }) {
           </li>
         </ul>
       </nav>
+
       <div className="audioContainer">
         {/* <div className="player">
           <div className="details">
@@ -60,9 +61,7 @@ function Navigation({ isLoaded, songUrl }) {
           title="AudioPlayer"
           controls
           autoplay="false"
-          value={songUrl}
-          src={songUrl} // will need to somehow change this source when the play button on the homepage
-          // next to one of the songs is clicked.
+          src={selectedSong ? selectedSong.audiofile : undefined}
         >
           <p>
             If you are reading this, it is because your browser does not support

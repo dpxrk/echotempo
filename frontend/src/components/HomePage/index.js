@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function HomePage({ onClickForNewSong }) {
+function HomePage({ selectedSong, onClickForNewSong }) {
   const sessionUser = useSelector((state) => state.session.user);
   const songs = useSelector((state) => {
     return state.songs.songList;
@@ -76,16 +76,9 @@ function HomePage({ onClickForNewSong }) {
                 <div
                   className="carousel-items"
                   key={song.id}
-                  value={song.audiofile}
-                  onClick={onClickForNewSong}
+                  onClick={onClickForNewSong(song)}
                 >
-                  <button
-                    className="playButton"
-                    value={song.audiofile}
-                    onClick={onClickForNewSong}
-                  >
-                    Play
-                  </button>
+                  <button className="playButton">Play</button>
                   {song.Title} by {song.artist}
                 </div>
               ))}
@@ -99,16 +92,9 @@ function HomePage({ onClickForNewSong }) {
                 <div
                   className="carousel-items"
                   key={song.id}
-                  value={song.audiofile}
-                  onClick={onClickForNewSong}
+                  onClick={onClickForNewSong(song)}
                 >
-                  <button
-                    className="playButton"
-                    value={song.audiofile}
-                    onClick={onClickForNewSong}
-                  >
-                    Play
-                  </button>
+                  <button className="playButton">Play</button>
                   {song.Title} by {song.artist}
                 </div>
               ))}
@@ -122,27 +108,26 @@ function HomePage({ onClickForNewSong }) {
                 <div
                   className="carousel-items"
                   key={song.id}
-                  value={song.audiofile}
-                  onClick={onClickForNewSong}
+                  onClick={onClickForNewSong(song)}
                 >
-                  <button
-                    className="playButton"
-                    value={song.audiofile}
-                    onClick={onClickForNewSong}
-                  >
-                    Play
-                  </button>
+                  <button className="playButton">Play</button>
                   {song.Title} by {song.artist}
                 </div>
               ))}
           </Slider>
         </div>
       </div>
-      <div className="audioInfo">
-        <div>Song Title:</div>
-        <div></div>
-        <div>Song Artist:</div>
-      </div>
+      {
+        selectedSong
+          ? (
+              <div className="audioInfo">
+                <div>Song Title:{selectedSong.Title} </div>
+
+                <div>Song Artist: {selectedSong.artist} </div>
+              </div>
+            )
+          : undefined
+      }
     </div>
   );
 }

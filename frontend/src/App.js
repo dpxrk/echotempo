@@ -30,17 +30,15 @@ function App() {
   });
   const [songPlaying, setSongPlaying] = useState(false);
   const [songUrl, setSongUrl] = useState("");
+  // const [songTitle, setSongTitle] = useState("");
+  // const [songArtist, setSongAritst] = useState("");
 
-  const onClickForNewSong = (e) => {
+  const [selectedSong, setSelectedSong] = useState();
+
+  const onClickForNewSong = (songThatWillBeSelected) => (e) => {
     e.preventDefault();
-   
-    if (songPlaying) {
-      setSongUrl(e.target.value);
-      setSongPlaying(true);
-    } else {
-      setSongUrl(e.target.value);
-      setSongPlaying(true);
-    }
+    setSelectedSong(songThatWillBeSelected);
+    setSongPlaying(true);
   };
 
   const dispatch = useDispatch();
@@ -51,12 +49,13 @@ function App() {
 
   return sessionUser ? (
     <>
-      <Navigation isLoaded={isLoaded} songUrl={songUrl} />
+      <Navigation isLoaded={isLoaded} selectedSong={selectedSong} />
       <Switch>
         <Route exact path="/home">
           <HomePage
             songPlaying={songPlaying}
             setSongPlaying={setSongPlaying}
+            selectedSong={selectedSong}
             onClickForNewSong={onClickForNewSong}
           />
         </Route>
