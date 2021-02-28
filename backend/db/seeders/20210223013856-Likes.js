@@ -139,6 +139,10 @@ module.exports = {
         userId: 16,
         songId: 34,
       },
+      {
+        userId: 17,
+        songId: 35,
+      },
     ]);
   },
 

@@ -83,10 +83,21 @@ module.exports = {
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
         {
-          email: "DJ@Snake.com", //15
+          email: "DJ@Snake.com", //16
           username: "DJ Snake",
           hashedPassword: bcrypt.hashSync(faker.internet.password()),
         },
+        {
+          email: "Kai@Kai.com", //17
+          username: "Kai",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+        {
+          email: "Katy@Perry.com", //18
+          username: "Katy Perry",
+          hashedPassword: bcrypt.hashSync(faker.internet.password()),
+        },
+
       ],
       {}
     );
